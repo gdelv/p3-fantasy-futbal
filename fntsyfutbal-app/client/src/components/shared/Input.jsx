@@ -1,7 +1,7 @@
 import React from 'react'
 import './styles/Input.css'
 
-const Input = ({ onChange, name, placeholder, required, value }) => {
+export const Input = ({ onChange, name, placeholder, required, value }) => (
     <div className='input'>
         <input
             value={value}
@@ -10,11 +10,8 @@ const Input = ({ onChange, name, placeholder, required, value }) => {
             onChange={e => onChange(e)}
         />
         <label htmlFor={name}>
-            <span>{ placeholder }</span>
+            <span>{placeholder}</span>
         </label>
-      
-
     </div>
-}
+)
 
-export default Input
