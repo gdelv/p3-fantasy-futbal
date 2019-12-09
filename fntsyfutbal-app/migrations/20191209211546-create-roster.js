@@ -14,7 +14,7 @@ module.exports = {
       player_id: {
         type: Sequelize.INTEGER
       },
-      rosterTitle: {
+      title: {
         type: Sequelize.STRING
       },
       createdAt: {

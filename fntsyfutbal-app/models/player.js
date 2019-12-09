@@ -1,13 +1,15 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   const Player = sequelize.define('Player', {
-    user_id: DataTypes.STRING,
-    roster_id: DataTypes.STRING,
+    roster_id: DataTypes.INTEGER,
     name: DataTypes.STRING,
     imgUrl: DataTypes.STRING
   }, {});
   Player.associate = function(models) {
-    // associations can be defined here
+    Player.belongsTo(models.roster, {
+      foreignKey: 'roster_id',
+      onDelete: 'Cascade'
+    })
   };
   return Player;
 };
