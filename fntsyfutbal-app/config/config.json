@@ -1,0 +1,18 @@
+{
+  "development": {
+    "database": "fantasy_futball_development",
+    "dialect": "postgres"
+  },
+  "test": {
+    "database": "fantasy_futball_test",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "production": {
+    "database": "fantasy_futball_production",
+    "dialect": "postgres",
+    "dialectOptions": {
+      "ssl": true
+    }
+  }
+}
