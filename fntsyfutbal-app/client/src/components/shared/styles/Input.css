@@ -23,8 +23,6 @@
 .input label {
 	position: absolute;
 	display: flex;
-	right: 5em;
-	top: 1em;
 	text-decoration: underline;
 	z-index: 1000;
 	pointer-events: none;
@@ -32,7 +30,8 @@
 	background-color: #ffffff;
 	font-size: 16px;
 	font-weight: 600;
-	color:rgba(0, 0, 0, 0.3)
+	color:rgba(0, 0, 0, 0.3);
+	width:fit-content;
 }
 
 .input input:focus + label,
@@ -44,14 +43,14 @@
 
 @media screen and (min-width: 600px) {
 	.input label {
-	right: 9em;
-	top: 1em;
+	left: 16em;
+	top: 2.5em;
 	}
 }
 
 @media screen and (min-width: 1000px) {
 	.input label {
-	right: 13em;
-	top: 1em;
+	left: 20em;
+	top: 2.5em;
 	}
 }
