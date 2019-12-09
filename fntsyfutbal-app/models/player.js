@@ -5,10 +5,11 @@ module.exports = (sequelize, DataTypes) => {
     name: DataTypes.STRING,
     imgUrl: DataTypes.STRING
   }, {});
+
   Player.associate = function(models) {
-    Player.belongsTo(models.roster, {
+    Player.belongsTo(models.Roster, {
       foreignKey: 'roster_id',
-      onDelete: 'Cascade'
+      onDelete: 'CASCADE'
     })
   };
   return Player;

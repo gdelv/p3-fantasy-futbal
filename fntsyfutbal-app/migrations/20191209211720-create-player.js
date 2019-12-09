@@ -9,7 +9,13 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       roster_id: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        onDelete: 'CASCADE',
+        references: {
+          model: 'Rosters',
+          key: 'id',
+          as: 'roster_id'
+        }
       },
       name: {
         type: Sequelize.STRING
