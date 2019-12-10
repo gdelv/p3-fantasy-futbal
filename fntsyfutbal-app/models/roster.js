@@ -8,7 +8,7 @@ module.exports = (sequelize, DataTypes) => {
 
   Roster.associate = function(models) {
     Roster.belongsTo(models.User, {
-      // foreignKey: user_id,
+      // foreignKey: user_i d,
       
     })
     // Roster.hasMany(models.Player, {
