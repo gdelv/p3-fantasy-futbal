@@ -5,11 +5,11 @@ module.exports = (sequelize, DataTypes) => {
     player_id: DataTypes.INTEGER,
     title: DataTypes.STRING
   }, {});
-  
+
   Roster.associate = function(models) {
     Roster.belongsTo(models.User, {
       foreignKey: user_id,
-      onDelete: CASCADE
+      
     })
     Roster.hasMany(models.Player, {
       foreignKey: player_id
