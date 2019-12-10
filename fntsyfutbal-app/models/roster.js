@@ -5,6 +5,7 @@ module.exports = (sequelize, DataTypes) => {
     player_id: DataTypes.INTEGER,
     title: DataTypes.STRING
   }, {});
+  
   Roster.associate = function(models) {
     Roster.belongsTo(models.User, {
       foreignKey: user_id,
