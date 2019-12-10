@@ -15,3 +15,5 @@ export const Input = ({ onChange, name, placeholder, required, value }) => (
     </div>
 )
 
+export default Input
+

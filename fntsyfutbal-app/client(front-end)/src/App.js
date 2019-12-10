@@ -1,4 +1,3 @@
-
 import React from 'react';
 import './App.css';
 import { Route, withRouter, Switch } from 'react-router-dom'
@@ -29,4 +28,4 @@ const App = (props) => (
 
 )
 
-export default App;
+export default withRouter(App)

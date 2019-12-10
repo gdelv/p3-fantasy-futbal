@@ -13,7 +13,7 @@ const Nav = (props) => (
            
         </div>
         <div className="nav-items">
-            <NavLink to='/join' className='navList'>Join</NavLink>
+            <NavLink to='/join' className='navList'>Join |</NavLink>
             <NavLink to='/login' className='navList'>Log In</NavLink>
             <NavLink to='/login/:id/roster' className='navList'></NavLink>
         </div>
