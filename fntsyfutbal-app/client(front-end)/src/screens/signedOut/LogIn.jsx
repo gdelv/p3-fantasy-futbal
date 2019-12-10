@@ -20,7 +20,7 @@ class LogIn extends React.Component {
             username,
             password
         }
-        api.post('/login', data)
+        api.post('/api/Users', data)
             .then((response) => response.status === 201 ? this.props.history.push('/userhome') : null)
             .catch(() => this.setState({ errorMsg: 'There was an error' }))
     }
