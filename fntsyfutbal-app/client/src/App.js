@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { Route, withRouter } from 'react-router-dom'
+import { Route, withRouter, Switch } from 'react-router-dom'
 
 import Home from './screens/signedOut/Home'
 import Join from './screens/signedOut/Join'
@@ -11,23 +11,21 @@ import Player from './screens/signedIn/Player'
 import HomeSignedIn from './screens/signedIn/HomeSignedIn'
 
 const App = (props) => (
-  <React.Fragment>
-    <div className="App">
-      {/* <h3>{props.location.state ? props.location.state.msg : null}</h3> */}
-      <Route exact path ='/' component={Home} />
-      <Route exact path ='/userhome' component={HomeSignedIn} />
+  <>
 
-      <Route exact path ='/join' component={Join} />
-      <Route exact path ='/login' component={LogIn} />
-      <Route exact path ='/create' component={CreateRoster} />
-      <Route exact path ='/login/:id/roster' component={Roster} />
-      <Route exact path ='/login/:id/roster/player' component={Player} />
+    <Switch>
+      {/* <h3>{props.location.state ? props.location.state.msg : null}</h3>  */}
+      <Route exact path='/' component={Home} />
+      <Route exact path='/userhome' component={HomeSignedIn} />
+      <Route exact path='/join' component={Join} />
+      <Route exact path='/login' component={LogIn} />
+      <Route exact path='/create' component={CreateRoster} />
+      <Route exact path='/login/:id/roster' component={Roster} />
+      <Route exact path='/login/:id/roster/player' component={Player} />
+    </Switch>
+  </>
 
-      
-    </div>
-  </React.Fragment>  
-    
 
 )
 
-export default withRouter(App);
+export default App;

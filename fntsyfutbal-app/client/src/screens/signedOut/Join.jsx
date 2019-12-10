@@ -5,6 +5,7 @@ const Join = () => (
     <Layout>
         <h4>Create your account!</h4>
     </Layout>
+
 )
 
 

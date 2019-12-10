@@ -2,12 +2,13 @@ import React from 'react'
 
 
 const Footer = () => (
-    <React.Fragment>
-        <p>© Copyright {new Date().getFullYear()}. All Rights Reserved.</p>
-    <p>Created By:</p>
-    <p>Jeanmax Deslouches, Frenchy French, Giusseppe Del Vecchio</p>
-    </React.Fragment>
+    <footer>
+    <div className="foot-items">
+        <p>© Copyright Jeanmax Deslouches, Frenchy French, Giusseppe Del Vecchio {new Date().getFullYear()}. All Rights Reserved.</p>
+    <p></p>
     
+    </div>
+    </footer>
 )
 
 export default Footer
