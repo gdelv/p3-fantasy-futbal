@@ -1,18 +1,18 @@
-import React from 'react'
 
-
-import Nav from './Nav'
+import React from "react"
+import Nav from "./Nav"
 import Footer from './Footer'
 
 const Layout = props => (
-    <div>
-        <h1>Fantasy Futbal</h1> 
-        <Nav />
+        <div>
+            {/* <h3>Fantasy Futball</h3> */}
+           <Nav />
 
-        {props.children}
-
+           {props.children}
         <Footer />
-    </div>
+          
+        </div>
+    
 )
 
 export default Layout
