@@ -3,7 +3,7 @@ import api from './apiConfig'
 //Create Account (signUp)
 export const join = async credentials => {
     try {
-        const resp = await api.post('/api/Users', credentials)
+        const resp = await api.post('/sign-up', credentials)
         localStorage.setItem('token', resp.data.token)
         return resp.data
     } catch(error) {
@@ -14,8 +14,8 @@ export const join = async credentials => {
 //Login Account (signInUser)
 export const logIn = async credentials => {
     try {
-        const resp = await api.post('/api/Users', credentials)
-        localStorage.setItem('token', resp.data.token)
+        const resp = await api.post('/sign-in', credentials)
+        console.log(resp)
         return resp.data
     } catch (error) {
         console.error(error)

@@ -13,14 +13,14 @@ const LogInForm = (props) => {
                 value={username}
                 required={true}
                 placeholder='Username'
-                onChange={(e) => onChange(e)}
+                handleChange={(e) => onChange(e)}
             />
             <Input
                 name='password'
                 value={password}
                 required={true}
                 placeholder='Password'
-                onChange={(e) => onChange(e)}
+                handleChange={(e) => onChange(e)}
             />
 
             <Button title='Submit' className='submitLogIn'/>
