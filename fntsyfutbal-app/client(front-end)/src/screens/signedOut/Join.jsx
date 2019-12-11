@@ -1,7 +1,7 @@
 import React from 'react'
 import Layout from '../../components/shared/Layout'
 import CreateAccForm from '../forms/CreateAccForm'
-import { api } from '../../services/apiConfig'
+import { join } from '../../services/auth'
 
 class Join extends React.Component {
     constructor(props) {
@@ -28,12 +28,10 @@ class Join extends React.Component {
             email,
             imgUrl
         }
-
-        // console.log({password})
-        // console.log(data)
-        api.post('/users', data)
-            .then((response) => response.status === 201 ? this.props.history.push('/') : null)
-            .catch(() => this.setState({ errorMsg: 'There was an error' }))
+        join(data)
+        .then((res) => this.props.setUser(res.user))
+        .then(()=> this.props.history.push('/'))
+        .catch(()=> this.setState({errorMsg: 'Something went wrong'}))
     }
 
     handleChange = e => this.setState({ [e.target.name]: e.target.value })
@@ -41,7 +39,6 @@ class Join extends React.Component {
     render() {
         const { username, firstName, lastName, email, password, imgUrl } = this.state
         return (
-            // <Layout>
             <>
                 <h4>Create your account!</h4>
                 <CreateAccForm
@@ -49,8 +46,8 @@ class Join extends React.Component {
                     onChange={this.handleChange}
                     onSubmit={this.handleSubmit}
                 />
+                {this.state.errorMsg ? <p>{this.state.errorMsg}</p>: null}
                 </>
-            // </Layout>
             
         )
     }

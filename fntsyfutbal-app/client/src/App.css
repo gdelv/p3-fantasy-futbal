@@ -6,7 +6,7 @@
 .navbar {
     height: 20%;
     background-color: #215F96;
-    /* border: 1px solid white; */
+    border: 1px solid white;
     display: flex;
     justify-content: space-between;
     color: white;
@@ -25,9 +25,9 @@ a.navList {
     color: white;
 }
 
-.navbar .nav-items{
+/* .navbar .nav-items{
   
-}
+} */
 
 
 .title img{

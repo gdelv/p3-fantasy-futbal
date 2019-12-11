@@ -1,6 +1,6 @@
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
-const { User, Roster, Player, createPlayer, updatePlayer, join} = require('../models')
+const { User, Roster, Player} = require('../models')
 
 const SALT_ROUNDS = 11
 const TOKEN_KEY = 'fantasykey'
