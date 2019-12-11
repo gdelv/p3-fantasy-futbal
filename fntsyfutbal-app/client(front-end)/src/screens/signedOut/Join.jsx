@@ -32,7 +32,7 @@ class Join extends React.Component {
         // console.log({password})
         // console.log(data)
         api.post('/users', data)
-            .then((response) => response.status === 201 ? this.props.history.push('/userhome') : null)
+            .then((response) => response.status === 201 ? this.props.history.push('/') : null)
             .catch(() => this.setState({ errorMsg: 'There was an error' }))
     }
 
