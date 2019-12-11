@@ -6,35 +6,6 @@ const SALT_ROUNDS = 11
 const TOKEN_KEY = 'fantasykey'
 
 
-//Login Controller (Sign In)
-const logIn = async (req,res) => {
-
-
-    try {
-            console.log(req.body)
-            const { username, password } = req.body
-            const user = await User.findAll({
-                where: {
-                    username
-                }
-            })
-            if(await bcrypt.compare(password, user.dataValues.password_digest)) {
-                const payload = {
-                    id:user.id,
-                    username: user.username,
-                    password: user.password
-                }
-                const token = jwt.sign(payload, TOKEN_KEY)
-                return res.status(201).json({ user, token })
-            } else {
-                res.status(401).send('Invalid Login')
-            }
-
-    } catch(error) {
-        return res.status(500).json({ error:error.message })
-    }
-}
-
 //Join Controller (Sign Up)
 
 const join = async(req,res) => {
@@ -48,8 +19,10 @@ const join = async(req,res) => {
             firstName,
             lastName,
             imgUrl,
+            // password
             password_digest
         })
+        console.log(user)
         const payload = {
             id: user.id,
             username: user.username,
@@ -66,6 +39,39 @@ const join = async(req,res) => {
         return res.status(400).json({ error:error.message })
     }
 }
+
+//Login Controller (Sign In)
+const logIn = async (req,res) => {
+
+
+    try {
+            console.log(req.body)
+            const { username, password } = req.body
+            const user = await User.findOne({
+                where: {
+                    username
+                }
+            })
+            console.log(user.dataValues)
+            if(await bcrypt.compare(password, user.dataValues.password_digest)) {
+                const payload = {
+                    id:user.id,
+                    username: user.username,
+                    email: user.email
+                }
+                const token = jwt.sign(payload, TOKEN_KEY)
+                return res.status(201).json({ user, token })
+            }
+             else {
+                res.status(401).send('Invalid Login')
+            }
+
+    } catch(error) {
+        // return res.status(500).json({ error:error.message })
+        throw error
+    }
+}
+
 
 const getAllUsers = async (req,res) => {
     try {

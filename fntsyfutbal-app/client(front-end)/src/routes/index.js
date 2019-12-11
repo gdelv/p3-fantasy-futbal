@@ -28,7 +28,7 @@ const Routes = ({ user, rosters, players, setUser, clearUser, addRoster, addPlay
         <Route
             exact
             path='/sign-in'
-            render={props => <SignIn {...props} setUser={setUser}/>}
+            render={props => <SignIn {...props} setUser={setUser} user={user}/>}
         />
         <Route
             exact
