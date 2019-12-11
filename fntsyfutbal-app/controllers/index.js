@@ -1,43 +1,43 @@
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
-const { User } = require('../models')
+const { User, Roster, Player, Join} = require('../models')
 
 const SALT_ROUNDS = 11
 const TOKEN_KEY = 'fantasykey'
 
 
 //Login Controller (Sign In)
-const logIn = async (req,res) => {
+const logIn = async (req, res) => {
 
 
     try {
-            console.log(req.body)
-            const { username, password } = req.body
-            const user = await User.findAll({
-                // where: {
-                //     username
-                // }
-            })
-            if(await bcrypt.compare(password, user.dataValues.password_digest)) {
-                const payload = {
-                    id:user.id,
-                    username: user.username,
-                    password: user.password
-                }
-                const token = jwt.sign(payload, TOKEN_KEY)
-                return res.status(201).json({ user, token })
-            } else {
-                res.status(401).send('Invalid Login')
+        console.log(req.body)
+        const { username, password } = req.body
+        const user = await User.findAll({
+            // where: {
+            //     username
+            // }
+        })
+        if (await bcrypt.compare(password, user.dataValues.password_digest)) {
+            const payload = {
+                id: user.id,
+                username: user.username,
+                password: user.password
             }
+            const token = jwt.sign(payload, TOKEN_KEY)
+            return res.status(201).json({ user, token })
+        } else {
+            res.status(401).send('Invalid Login')
+        }
 
-    } catch(error) {
-        return res.status(500).json({ error:error.message })
+    } catch (error) {
+        return res.status(500).json({ error: error.message })
     }
 }
 
 //Join Controller (Sign Up)
 
-const join = async(req,res) => {
+const join = async (req, res) => {
     try {
         console.log(req.body)
         const { username, password, email, firstName, lastName, imgUrl } = req.body
@@ -63,11 +63,11 @@ const join = async(req,res) => {
         return res.status(201).json({ user, token })
     } catch (error) {
         console.log('Oops! Something went wrong')
-        return res.status(400).json({ error:error.message })
+        return res.status(400).json({ error: error.message })
     }
 }
 
-const getAllUsers = async (req,res) => {
+const getAllUsers = async (req, res) => {
     try {
         const users = await User.findAll();
         return res.status(200).json({ users })
@@ -75,8 +75,30 @@ const getAllUsers = async (req,res) => {
         return res.status(500).send(error.message)
     }
 }
+const getAllPlayers = async(req,res)=>{
+    const players = await Player.findAll()
+    res.send(players)
+}
+const getPlayersRosters = async (req, res) => {
+    console.log('inside contoller')
+    try {
+        const player = await players.findAll( {
+            where: {
+                id: req.params.id
+            },
+            include: [{
+                model: Roster,
+            }]
+        });
+        return res.status(200).json({ player })
+    }
+    catch (error) {
+        return res.status(500).send(error.message)
+    }
+  
+}
 
-const getRosterById =  async(req,res) => {
+const getRosterById = async (req, res) => {
     try {
         const { id } = req.params
         const roster = await Roster.findOne({
@@ -86,15 +108,15 @@ const getRosterById =  async(req,res) => {
             return res.status(200).json({ roster })
         }
         return res.status(404).send('Roster with the specified ID does not exist')
-    } catch(error) {
+    } catch (error) {
         return res.status(500).send(error.message)
     }
 }
 
-
 // const changePassword 
 
-const getAllRosters = async (req,res) => {
+const getAllRosters = async (req, res) => {
+    console.log('here')
     try {
         const rosters = await Roster.findAll();
         return res.status(200).json({ rosters })
@@ -103,7 +125,7 @@ const getAllRosters = async (req,res) => {
     }
 }
 
-const createRoster = async(req,res) => {
+const createRoster = async (req, res) => {
     try {
         console.log('req.body:', req.body)
         const createdRoster = await Roster.create(req.body)
@@ -113,30 +135,30 @@ const createRoster = async(req,res) => {
                 createdRoster
             }
         })
-    } catch(error) {
+    } catch (error) {
         console.log(error)
-        return res.status(500).json({ error:error.message })
+        return res.status(500).json({ error: error.message })
     }
 }
 
-const updateRoster = async(req,res) => {
+const updateRoster = async (req, res) => {
     try {
         const { id } = req.params
         const { roster } = req.body
         const [updated] = await Roster.update(roster, {
             where: { id: id }
         })
-        if(updated) {
+        if (updated) {
             const updatedRoster = await Roster.findOne({ where: { id: id } })
             return res.status(202).json({ roster: updatedRoster })
         }
         throw new Error('Roster not found')
-    } catch(error) {
+    } catch (error) {
         return res.status(500).send(error.message)
     }
 }
 
-const deleteRoster = async(req,res) => {
+const deleteRoster = async (req, res) => {
     try {
         const { id } = req.params
         const deleted = await Roster.destroy({
@@ -146,19 +168,21 @@ const deleteRoster = async(req,res) => {
             return res.status(202).send('Item deleted')
         }
         throw new Error('Roster not found')
-    } catch(error) {
+    } catch (error) {
         return res.status(500).send(error.message)
     }
 }
 
 
 module.exports = {
-    join, 
+    join,
     logIn,
     getAllUsers,
     getAllRosters,
     createRoster,
     getRosterById,
     updateRoster,
-    deleteRoster
+    deleteRoster,
+    getPlayersRosters,
+    getAllPlayers
 }
