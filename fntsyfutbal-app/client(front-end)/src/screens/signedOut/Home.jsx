@@ -1,9 +1,15 @@
 import React from 'react'
 import Layout from '../../components/shared/Layout'
+
 import herosoccer from '../images/herosoccer.jpg'
 import  g from '../images/giphy-3.gif'
+<<<<<<< HEAD
 import Button from '../../components/shared/Button'
 import { NavLink } from 'react-router-dom'
+=======
+// import Button from '../shared/Button'
+// import { NavLink } from 'react-router-dom'
+>>>>>>> 8720751f88209259dfbcb7e67229ce41a00ca208
 
 const Home = () => (
     <Layout>

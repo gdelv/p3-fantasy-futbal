@@ -7,8 +7,9 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
 
   Player.associate = function(models) {
-    Player.belongsTo(models.Roster, {
-      foreignKey: 'roster_id',
+    Player.belongsToMany(models.Roster, {
+      through: models.Join,
+      foreignKey: 'player_id',
       onDelete: 'CASCADE'
     })
   };
