@@ -41,14 +41,17 @@ class Join extends React.Component {
     render() {
         const { username, firstName, lastName, email, password, imgUrl } = this.state
         return (
-            <Layout>
+            // <Layout>
+            <>
                 <h4>Create your account!</h4>
                 <CreateAccForm
                     formData={{ username, firstName, lastName, email, password, imgUrl }}
                     onChange={this.handleChange}
                     onSubmit={this.handleSubmit}
                 />
-            </Layout>
+                </>
+            // </Layout>
+            
         )
     }
 }

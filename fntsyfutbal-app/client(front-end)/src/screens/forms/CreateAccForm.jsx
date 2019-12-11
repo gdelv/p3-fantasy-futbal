@@ -5,7 +5,7 @@ import Layout from '../../components/shared/Layout'
 
 
 const CreateAccForm = (props) => {
-
+    console.log(props.onChange)
     const { onChange, onSubmit } = props
     const { username, firstName, lastName, email, password, imgUrl } = props.formData
     return (

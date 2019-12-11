@@ -1,6 +1,6 @@
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
-const { User, Roster, Player, Join} = require('../models')
+const { User, Roster, Player, createPlayer, updatePlayer, join} = require('../models')
 
 const SALT_ROUNDS = 11
 const TOKEN_KEY = 'fantasykey'
@@ -179,6 +179,47 @@ const deleteRoster = async (req, res) => {
     }
 }
 
+const createPlayer = async (req, res) => {
+    try {
+        const player = await Player.create(req.body)
+        return res.status(201).json({
+            player
+        })
+    } catch (error) {
+    return res.status(500).json({error: error.message})
+    }
+}
+
+const updatePlayer = async (req, res) => {
+    try {
+        const {id} = req.params
+        const [updated] = await Player.Update(req.body, {
+            Where: { id: id }
+        })
+       if (update) {
+           const updatePlayer = await Player.findAll({where: {id:id}})
+           return res.status(200).json({player: updatePlayer})
+       }
+    } catch (error) {
+       return res.status(500).send(error.message)
+        }
+    }
+
+    const deletePlayer = async (req, res) => {
+     try {
+         const {id} = req.params
+         const deleted = await Player.destroy({
+             where: {id: id}
+         })
+         if (deleted) {
+            return res.status(200).send('Player deleted')
+         }
+     } catch (error) {
+         return res.status(500).send(error.message)
+     }
+    }
+
+
 
 module.exports = {
     join,
@@ -190,5 +231,8 @@ module.exports = {
     updateRoster,
     deleteRoster,
     getPlayersRosters,
+    createPlayer,
+    updatePlayer,
+    deletePlayer,
     getAllPlayers
 }
