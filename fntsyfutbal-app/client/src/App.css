@@ -63,3 +63,7 @@ box-shadow: 5px 5px 5px rgba(68,68,68,0.6)
     margin-top: 60px;
 }
 
+.form h3{
+    text-align: center;
+    color: red;
+}

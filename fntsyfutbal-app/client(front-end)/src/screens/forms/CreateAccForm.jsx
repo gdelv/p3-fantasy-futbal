@@ -1,6 +1,7 @@
 import React from 'react'
 import { Input } from '../../components/shared/Input'
 import { Button } from '../../components/shared/Button'
+import Layout from '../../components/shared/Layout'
 
 
 const CreateAccForm = (props) => {
@@ -8,7 +9,11 @@ const CreateAccForm = (props) => {
     const { onChange, onSubmit } = props
     const { username, firstName, lastName, email, password, imgUrl } = props.formData
     return (
+        
+       <div className='form-container'>
+  
         <form className='form' onSubmit={(e) => onSubmit(e)}>
+        <h3 className='formTitle'>Create your account</h3>
             <Input
                 name='username'
                 value={username}
@@ -56,6 +61,7 @@ const CreateAccForm = (props) => {
             <Button title='Submit' className='submitCreateAcc' />
 
         </form>
+        </div>
     )
 }
 

@@ -2,15 +2,16 @@ import React from 'react'
 import Layout from '../../components/shared/Layout'
 import Input from '../../components/shared/Input'
 
-class Join = (props) => {
+const Join = (props) => {
    
     // const { onChange, onSubmit } = props
     // const {playername, imageUrl} = props.formData
     return( 
         <>
-    <Layout>
+              <Layout>
         <h4>Create your account!</h4>
-    </Layout>
+        </Layout>
+    
         {/* <form className='form' onSubmit={(e) => onSubmit(e)}>
             <Input 
             name='playername'
