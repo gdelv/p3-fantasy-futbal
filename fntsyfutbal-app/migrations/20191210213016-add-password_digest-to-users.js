@@ -13,3 +13,4 @@ module.exports = {
     return queryInterface.removeColumn('Users', 'password_digest');
   }
 };
+ 

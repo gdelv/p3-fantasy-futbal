@@ -15,6 +15,7 @@ router.post('/users', controllers.logIn)
 router.get('/users', controllers.getAllUsers)
 router.get('/rosters', controllers.getAllRosters)
 router.get('/rosters/:id', controllers.getRosterById)
+router.get('/players/:id/roster', controllers.getPlayersRosters)
 
 router.post('/rosters', controllers.createRoster)
 
@@ -22,6 +23,7 @@ router.put('/rosters/:id', controllers.updateRoster)
 
 router.delete('/rosters/:id', controllers.deleteRoster)
 
+router.get('/players', controllers.getAllPlayers)
 
 
 module.exports = router

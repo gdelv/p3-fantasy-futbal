@@ -7,13 +7,14 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
 
   Roster.associate = function(models) {
-    Roster.belongsTo(models.User, {
-      // foreignKey: user_i d,
+    // Roster.belongsTo(models.User, {
+    //   foreignKey: "user_id",
       
-    })
-    // Roster.hasMany(models.Player, {
-    //   foreignKey: player_id
     // })
+    Roster.belongsToMany(models.Player, {
+      through: models.Join,
+      foreignKey: 'roster_id'
+    })
   };
   return Roster;
 };
