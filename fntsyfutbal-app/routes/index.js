@@ -22,6 +22,7 @@ router.post('/sign-in', controllers.logIn)
 
 // router.delete('/rosters/:id', controllers.deleteRoster)
 
+router.get('/players', controllers.getAllPlayers)
 
 
 module.exports = router

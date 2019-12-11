@@ -9,11 +9,12 @@ module.exports = (sequelize, DataTypes) => {
     imgUrl: DataTypes.STRING,
     password_digest: DataTypes.STRING
   }, {});
+  
   User.associate = function (models) {
-    User.hasMany(models.Roster, {
-      // foreignKey: roster_id,
-      // onDelete: CASCADE
-    })
+    // User.hasMany(models.Roster, {
+    //   foreignKey:"user_id",
+    //   // onDelete: CASCADE
+    // })
 
   };
   return User;
