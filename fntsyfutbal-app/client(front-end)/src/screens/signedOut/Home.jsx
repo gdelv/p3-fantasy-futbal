@@ -1,9 +1,10 @@
 import React from 'react'
 import Layout from '../../components/shared/Layout'
+
 import herosoccer from '../images/herosoccer.jpg'
 import  g from '../images/giphy-3.gif'
 // import Button from '../shared/Button'
-import { NavLink } from 'react-router-dom'
+// import { NavLink } from 'react-router-dom'
 
 const Home = () => (
     <Layout>
