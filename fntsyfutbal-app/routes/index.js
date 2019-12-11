@@ -6,22 +6,21 @@ const router = Router()
 router.get('/', (req,res)=> res.send('This is the main page'))
 
 //creates account with the information in CreateAccForm
-router.post('/users', controllers.join)
+router.post('/sign-up', controllers.join)
 
 //Logs in account
-router.post('/users', controllers.logIn)
+router.post('/sign-in', controllers.logIn)
 
 
-router.get('/users', controllers.getAllUsers)
-router.get('/rosters', controllers.getAllRosters)
-router.get('/rosters/:id', controllers.getRosterById)
-router.get('/players/:id/roster', controllers.getPlayersRosters)
+// router.get('/users', controllers.getAllUsers)
+// router.get('/rosters', controllers.getAllRosters)
+// router.get('/rosters/:id', controllers.getRosterById)
 
-router.post('/rosters', controllers.createRoster)
+// router.post('/rosters', controllers.createRoster)
 
-router.put('/rosters/:id', controllers.updateRoster)
+// router.put('/rosters/:id', controllers.updateRoster)
 
-router.delete('/rosters/:id', controllers.deleteRoster)
+// router.delete('/rosters/:id', controllers.deleteRoster)
 
 router.get('/players', controllers.getAllPlayers)
 
