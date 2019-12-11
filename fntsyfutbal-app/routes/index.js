@@ -5,8 +5,11 @@ const router = Router()
 
 router.get('/', (req,res)=> res.send('This is the main page'))
 
-router.post('/join', controllers.join)
-router.post('/login', controllers.logIn)
+//creates account with the information in CreateAccForm
+router.post('/users', controllers.join)
+
+//Logs in account
+router.post('/users', controllers.logIn)
 
 
 router.get('/users', controllers.getAllUsers)

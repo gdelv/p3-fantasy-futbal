@@ -7,31 +7,31 @@ const TOKEN_KEY = 'fantasykey'
 
 
 //Login Controller (Sign In)
-const logIn = async (req, res) => {
+const logIn = async (req,res) => {
 
 
     try {
-        console.log(req.body)
-        const { username, password } = req.body
-        const user = await User.findAll({
-            // where: {
-            //     username
-            // }
-        })
-        if (await bcrypt.compare(password, user.dataValues.password_digest)) {
-            const payload = {
-                id: user.id,
-                username: user.username,
-                password: user.password
+            console.log(req.body)
+            const { username, password } = req.body
+            const user = await User.findAll({
+                where: {
+                    username
+                }
+            })
+            if(await bcrypt.compare(password, user.dataValues.password_digest)) {
+                const payload = {
+                    id:user.id,
+                    username: user.username,
+                    password: user.password
+                }
+                const token = jwt.sign(payload, TOKEN_KEY)
+                return res.status(201).json({ user, token })
+            } else {
+                res.status(401).send('Invalid Login')
             }
-            const token = jwt.sign(payload, TOKEN_KEY)
-            return res.status(201).json({ user, token })
-        } else {
-            res.status(401).send('Invalid Login')
-        }
 
-    } catch (error) {
-        return res.status(500).json({ error: error.message })
+    } catch(error) {
+        return res.status(500).json({ error:error.message })
     }
 }
 
