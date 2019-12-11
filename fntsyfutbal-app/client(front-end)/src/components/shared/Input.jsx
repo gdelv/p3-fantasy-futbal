@@ -7,7 +7,7 @@ export const Input = ({ onChange, name, placeholder, required, value }) => (
             value={value}
             name={name}
             required={required}
-            onChange={e => onChange(e)}
+            handleChange={e => onChange(e)}
         />
         <label htmlFor={name}>
             <span>{placeholder}</span>
