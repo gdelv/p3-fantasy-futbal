@@ -14,9 +14,9 @@ const logIn = async (req,res) => {
             console.log(req.body)
             const { username, password } = req.body
             const user = await User.findAll({
-                // where: {
-                //     username
-                // }
+                where: {
+                    username
+                }
             })
             if(await bcrypt.compare(password, user.dataValues.password_digest)) {
                 const payload = {
