@@ -11,10 +11,10 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   
   User.associate = function (models) {
-    // User.hasMany(models.Roster, {
-    //   foreignKey:"user_id",
-    //   // onDelete: CASCADE
-    // })
+    User.hasMany(models.Roster, {
+      foreignKey:"user_id",
+      // onDelete: CASCADE
+    })
 
   };
   return User;

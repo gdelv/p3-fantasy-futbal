@@ -1,40 +1,31 @@
 import React from 'react'
 import Layout from '../../components/shared/Layout'
-import Input from '../../components/shared/Input'
+import { Input } from '../../components/shared/Input'
+import { Button } from '../../components/shared/Button'
+import { NavLink } from 'react-router-dom'
 
-const Join = (props) => {
-   
-    // const { onChange, onSubmit } = props
-    // const {playername, imageUrl} = props.formData
-    return( 
-        <>
-              <Layout>
-        <h4>Create your account!</h4>
+const CreateRoster = (props) => {
+
+    // const { onChange, handleSubmit } = props
+    // const { title } = props.createdRoster
+
+    return (
+        <Layout>
+            <h4>Create Your Roster!</h4>
+            <h3>Give Your Roster a Title</h3>
+            <Input
+                // title='title'
+                // value={title}
+                // placeholder='Roster Title'
+                // onChange={(e) => onChange(e)}
+            />
+            <NavLink to='addPlayers'>
+                <Button title='Add Players' className='submitCreateRoster' />
+            </NavLink>
+
         </Layout>
-    
-        {/* <form className='form' onSubmit={(e) => onSubmit(e)}>
-            <Input 
-            name='playername'
-            value={playername}
-            placholder='playername'
-            required={true}
-            onChange={(e) => onchange(e)}
-            />
-
-                <Input 
-            name='imageUrl'
-            value={imageUrl}
-            placholder='ImageUrl'
-            required={true}
-            onChange={(e) => onchange(e)}
-            />
-
-        </form> */}
-
-        </>
     )
-
 }
 
 
-export default Join
+export default CreateRoster
