@@ -1,10 +1,10 @@
 import React from 'react'
 import { Route, Switch } from 'react-router-dom'
-import Home from '../screens/signedIn/HomeSignedIn' //user home
-import Landing from '../screens/signedOut/Home' //non-user home
-import SignIn from '../screens/signedOut/LogIn'  //login page
-// import SignOut from '../screens/signedOut/SignOut'//needs to be created
-import SignUp from '../screens/signedOut/Join' //sign-up page
+import Home from '../screens/signedIn/HomeSignedIn' //user home (needs to be double checked)
+import Landing from '../screens/signedOut/Home' //non-user home (needs to be double checked)
+import SignIn from '../screens/signedOut/LogIn'  //login page (complete)
+import SignOut from '../screens/signedOut/SignOut'//(complete)
+import SignUp from '../screens/signedOut/Join' //sign-up page (complete)
 // import Roster from '../screens/Roster'//needs to be created
 // import Rosters from '../screens/Rosters'//needs to be created
 // import RosterCreate from '../screens/RosterCreate'//needs to be created
@@ -20,8 +20,8 @@ const Routes = ({ user, rosters, players, setUser, clearUser, addRoster, addPlay
         <Route
             exact
             path='/'
-            // render={props => (user ? <Home/> : <Landing {...props} rosters={rosters} players={players} />)}
-            render={() => <Landing/>}
+            render={props => (user ? <Home/> : <Landing {...props} rosters={rosters} players={players} />)}
+            // render={() => <Landing/>}
             // render={() => <Home/>}
 
         />
@@ -36,6 +36,12 @@ const Routes = ({ user, rosters, players, setUser, clearUser, addRoster, addPlay
             render={props => <SignUp {...props} setUser={setUser}/>}
             // render={() => <SignUp/>}
         />
+        <Route
+            exact
+            path='/sign-out'
+            render={props => <SignOut {...props} clearUser={clearUser} user={user}/>}
+        />
+
     </Switch>
 
 )
