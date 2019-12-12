@@ -7,7 +7,7 @@ const HomeSignedIn = () => (
     <LayoutSignedIn>
         <h4>Welcome to Fantasy Futbal!</h4>
         <NavLink to='create'>
-            <Button title='Create Roster' className='home' />
+            <Button title='Create Roster' className='createRoster' />
         </NavLink>
     </LayoutSignedIn>
 )
