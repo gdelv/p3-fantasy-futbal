@@ -31,13 +31,13 @@ class Roster extends Component {
     handleSubmit = event => {
         event.preventDefault()
         this.props.addRoster(this.state.roster)
-        // createRoster(this.state.roster)
-        .then(res =>
-            res.status === 201
-            ? this.setState({ 
-                createdRoster: res.data.roster
-            })
-            :null
+            // createRoster(this.state.roster)
+            .then(res =>
+                res.status === 201
+                    ? this.setState({
+                        createdRoster: res.data.roster
+                    })
+                    : null
             )
             .catch(console.error)
     }
@@ -65,21 +65,23 @@ class Roster extends Component {
 
         return (
             <Layout>
-                
-                <h4>Create Your Roster!</h4>
-                <Input
-                name='inputTitle'
-                title='title'
-                history={history}
-                placeholder='Roster Title'
-                onChange={(e) => onChange(e)}
-                handleSubmit={handleSubmit}
-                cancelPath='/'
-            />
+                <form name="Roster-Form">
+                    <input
+                        type="text"
+                        name='inputTitle'
+                        title='title'
+                        history={history}
+                        placeholder='Roster Title'
+                        onChange={(e) => onChange(e)}
+                        handleSubmit={handleSubmit}
+                        cancelPath='/'
+                    />
+                    
+                    <NavLink to='addPlayers'>
+                        <Button title='Add Players' className='submitCreateRoster' />
+                    </NavLink>
 
-            <NavLink to='addPlayers'>
-                <Button title='Add Players' className='submitCreateRoster' />
-            </NavLink>
+                </form>
             </Layout>
         )
     }

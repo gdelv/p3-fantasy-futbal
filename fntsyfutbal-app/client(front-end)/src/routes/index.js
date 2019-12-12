@@ -6,7 +6,7 @@ import SignIn from '../screens/signedOut/LogIn'  //login page (complete)
 import SignOut from '../screens/signedOut/SignOut'//(complete)
 import SignUp from '../screens/signedOut/Join' //sign-up page (complete)
 // import Roster from '../screens/Roster'//needs to be created
-import Rosters from '../screens/Rosters'//(complete)
+// import Rosters from '../screens/Rosters'//(complete)
 // import RosterCreate from '../screens/RosterCreate'//needs to be created
 // import RosterEdit from '../screens/RosterEdit'//needs to be created
 
@@ -41,12 +41,12 @@ const Routes = ({ user, rosters, players, setUser, clearUser, addRoster, addPlay
             path='/sign-out'
             render={props => <SignOut {...props} clearUser={clearUser} user={user}/>}
         />
-        <AuthenticatedRoute
+        {/* <AuthenticatedRoute
             exact
             path='/rosters'
             user={user}
             render={props => <Rosters {...props} user={user} rosters={rosters}/>}
-        />
+        /> */}
 
     </Switch>
 
