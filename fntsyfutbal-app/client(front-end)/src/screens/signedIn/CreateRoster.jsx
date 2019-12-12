@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
+import RosterForm from '../../components/shared/RosterForm'
 import Layout from '../../components/shared/Layout'
-import { Button } from '../../components/shared/Button'
-import { NavLink } from 'react-router-dom'
-import { createRoster } from ''
+// import { Button } from '../../components/shared/Button'
+// import { NavLink } from 'react-router-dom'
+import { createRoster } from '../../services/rosters'
 
 class CreateRoster extends Component {
     constructor(props) {
@@ -12,17 +13,15 @@ class CreateRoster extends Component {
         this.state = {
             roster: {
                 title: "",
-                link: ""
+                // link: ""
             },
             createdRoster: null
         }
     }
 
     handleChange = event => {
-        const updatedField = {
-            [event.target.name]: event.target.value
-        }
-        const editedRoster = Object.assign(this.state.roster, updatedField)
+        const updatedField = { [event.target.name]: event.target.value }
+        const editedRoster = Object.assign(this.state.roster.title, updatedField)
         this.setState({
             roster: editedRoster
         })
@@ -34,9 +33,7 @@ class CreateRoster extends Component {
         createRoster(this.state.roster)
             .then(res =>
                 res.status === 201
-                    ? this.setState({
-                        createdRoster: res.data.roster
-                    })
+                    ? this.setState({ createdRoster: res.data.roster})
                     : null
             )
             .catch(console.error)
@@ -44,35 +41,47 @@ class CreateRoster extends Component {
 
     render() {
         const { handleChange, handleSubmit } = this
-        const { createdRoster, title } = this.state
-        console.log(this.state)
+        const { createdRoster, roster } = this.state
+        // console.log(this.state)
         const { history } = this.props
 
         if (createdRoster) {
-            return <Redirect to={`/`} />
+            return <Redirect to={`/rosters`} />
         }
 
+        // return (
+        //     <Layout>
+        //         <form name="Roster-Form">
+        //             <input
+        //                 type="text"
+        //                 name='inputTitle'
+        //                 title={this.title.state}
+        //                 history={history}
+        //                 placeholder='Roster Title'
+        //                 onChange={handleChange()}
+        //                 handleSubmit={handleSubmit}
+        //                 cancelPath='/'
+        //             />
+
+        //             <NavLink to='addPlayers'>
+        //                 <Button title='Add Players' className='submitCreateRoster' />
+        //             </NavLink>
+
+        //         </form>
+        //     </Layout>
+        // )
         return (
             <Layout>
-                <form name="Roster-Form">
-                    <input
-                        type="text"
-                        name='inputTitle'
-                        title={this.title.state}
-                        history={history}
-                        placeholder='Roster Title'
-                        onChange={this.handleChange()}
-                        handleSubmit={this.handleSubmit}
-                        cancelPath='/'
-                    />
-
-                    <NavLink to='addPlayers'>
-                        <Button title='Add Players' className='submitCreateRoster' />
-                    </NavLink>
-
-                </form>
+              <RosterForm
+                roster={roster}
+                history={history}
+                handleChange={handleChange}
+                handleSubmit={handleSubmit}
+                cancelPath="/"
+              />
             </Layout>
-        )
+          )
+
     }
 }
 
