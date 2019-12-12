@@ -19,6 +19,7 @@ class Join extends React.Component {
     }
 
     handleSubmit = (event) => {
+        console.log('inside handleSubmit')
         event.preventDefault()
         const { username, firstName, lastName, email, password, imgUrl } = this.state
         const data = {
@@ -45,7 +46,7 @@ class Join extends React.Component {
 
               <div className='join-header'>
                   <img src={socerball} alt='' />
-                <h4>Create your account!</h4>
+                  <h4>Create your account!</h4>
               </div>
                 <CreateAccForm
                     formData={{ username, firstName, lastName, email, password, imgUrl }}
