@@ -46,7 +46,7 @@
 // export default LogIn
 
 import React, { Component } from 'react'
-import { logIn } from "../../services/auth"; //complete for now
+import { logIn } from "../../services/auth"; //complete for login feature
 // import LogInForm from '../forms/LogInForm';
 
 class LogIn extends Component {
