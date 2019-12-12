@@ -3,7 +3,7 @@ import Container from './components/Container'
 // import React from 'react';
 // import './App.css';
 import { Route, withRouter, Switch } from 'react-router-dom'
-import CreateRoster from './screens/signedIn/CreateRoster'
+import Roster from './screens/signedIn/Roster'
 import AddPlayers from './screens/signedIn/AddPlayers'
 
 // import Home from './screens/signedOut/Home'
@@ -40,7 +40,7 @@ export default function App() {
   return (
     <>
       <Container />
-      <Route exact path='/create' component={CreateRoster} />
+      <Route exact path='/create' component={Roster} />
       <Route exact path='/addPlayers' component={AddPlayers} />
     </>
   )
