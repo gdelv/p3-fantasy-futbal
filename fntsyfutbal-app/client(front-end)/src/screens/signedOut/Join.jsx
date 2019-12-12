@@ -57,8 +57,8 @@
 // export default Join
 
 
-import React, { Component } from 'react'
-import { join, logIn } from '../../services/auth'
+import React, { Component } from 'react'            //minor glitch, the passwords dont have to match to the password confirmation for user password entered
+import { join, logIn } from '../../services/auth' //complete for sign up feature
 
 class SignUp extends Component {
     constructor() {

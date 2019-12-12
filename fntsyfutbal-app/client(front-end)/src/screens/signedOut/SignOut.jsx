@@ -1,5 +1,5 @@
 import { Component } from 'react'
-import { signOut } from '../../services/auth' //complete
+import { signOut } from '../../services/auth' //complete for signout feature
 
 class SignOut extends Component {
     componentDidMount() {
