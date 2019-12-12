@@ -48,6 +48,7 @@
 import React, { Component } from 'react'
 import { logIn } from "../../services/auth"; //complete for now
 import LogInForm from '../forms/LogInForm';
+import socerball from './../images/socerball.png'
 
 class LogIn extends Component {
     constructor() {
@@ -108,7 +109,11 @@ class LogIn extends Component {
             // <LogInForm/>
             <div className='row'>
                 <div className='form-container'>
-                    <h3>Sign In</h3>
+                    <div className='sign-in'>
+                        <img src={socerball} alt="" />
+                        <h3>Sign In</h3>
+                    </div>
+                    {/* <div className='placeholder-login'> */}
                     <form onSubmit={this.onSignIn}>
                         <label>Username</label>
                         <input
@@ -130,6 +135,7 @@ class LogIn extends Component {
                         />
                         {this.renderError()}
                     </form>
+                    {/* </div> */}
                 </div>
             </div>
         )

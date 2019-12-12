@@ -2,6 +2,7 @@ import React from 'react'
 import Layout from '../../components/shared/Layout'
 import CreateAccForm from '../forms/CreateAccForm'
 import { join } from '../../services/auth'
+import socerball from '../images/socerball.png'
 
 class Join extends React.Component {
     constructor(props) {
@@ -39,15 +40,20 @@ class Join extends React.Component {
     render() {
         const { username, firstName, lastName, email, password, imgUrl } = this.state
         return (
-            <>
+    
+            <div className='join-page'>
+
+              <div className='join-header'>
+                  <img src={socerball} alt='' />
                 <h4>Create your account!</h4>
+              </div>
                 <CreateAccForm
                     formData={{ username, firstName, lastName, email, password, imgUrl }}
                     onChange={this.handleChange}
                     onSubmit={this.handleSubmit}
                 />
                 {this.state.errorMsg ? <p>{this.state.errorMsg}</p>: null}
-                </>
+            </div>
             
         )
     }
