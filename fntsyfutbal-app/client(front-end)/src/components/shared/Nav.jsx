@@ -12,11 +12,11 @@ const Nav = (props) => (
             <h2>Fantasy Futball</h2>
            
         </div>
-        <div className="nav-items">
-            <NavLink to='/join' className='navList'>Join |</NavLink>
-            <NavLink to='/login' className='navList'>Log In</NavLink>
+        {/* <div className="nav-items">
+            <NavLink to='/sign-up' className='navList'>Join |</NavLink>
+            <NavLink to='/sign-in' className='navList'>Log In</NavLink>
             <NavLink to='/login/:id/roster' className='navList'></NavLink>
-        </div>
+        </div> */}
        
     </nav>
      

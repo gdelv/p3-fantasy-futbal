@@ -49,14 +49,14 @@ export default function App() {
     <>
       <Container />
       <Switch>
+      <Route exact path='/create' component={CreateRoster} />
 //       {/* <h3>{props.location.state ? props.location.state.msg : null}</h3>  */}
-//       <Route exact path='/' component={Home} />
+{/* //       <Route exact path='/' component={Home} />
 //       <Route exact path='/userhome' component={HomeSignedIn} />
 //       <Route exact path='/join' component={Join} />
 //       <Route exact path='/login' component={LogIn} />
-//       <Route exact path='/create' component={CreateRoster} />
 //       <Route exact path='/login/:id/roster' component={Roster} />
-//       <Route exact path='/login/:id/roster/player' component={Player} />
+//       <Route exact path='/login/:id/roster/player' component={Player} /> */}
 //     </Switch>
 //   </>
     
