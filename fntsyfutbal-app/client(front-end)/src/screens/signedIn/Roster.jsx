@@ -65,6 +65,7 @@ class Roster extends Component {
 
         return (
             <Layout>
+                
                 <h4>Create Your Roster!</h4>
                 <Input
                 name='inputTitle'
