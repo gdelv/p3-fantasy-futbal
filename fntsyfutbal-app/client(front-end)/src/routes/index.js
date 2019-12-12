@@ -1,17 +1,17 @@
 import React from 'react'
 import { Route, Switch } from 'react-router-dom'
-import Home from '../screens/signedIn/HomeSignedIn' //user home (needs to be double checked)
-import Landing from '../screens/signedOut/Home' //non-user home (needs to be double checked)
+import Home from '../screens/signedIn/HomeSignedIn' //user home (commented out previous home/currently using same layout as solution branch)
+import Landing from '../screens/signedOut/Home' //non-user home (commented out previous home/currently using same layout as solution branch)
 import SignIn from '../screens/signedOut/LogIn'  //login page (complete)
 import SignOut from '../screens/signedOut/SignOut'//(complete)
 import SignUp from '../screens/signedOut/Join' //sign-up page (complete)
-// import Roster from '../screens/Roster'//needs to be created
-import Rosters from '../screens/Rosters'//(complete)
+import Roster from '../screens/signedIn/Roster'//(complete)
+import Rosters from '../screens/signedIn/Rosters'//(complete)
 // import RosterCreate from '../screens/RosterCreate'//needs to be created
 // import RosterEdit from '../screens/RosterEdit'//needs to be created
 
-// import Player from '../screens/Player'//needs to be created
-// import Rosters from '../screens/Rosters'//needs to be created
+import Player from '../screens/signedIn/Player'//(complete)
+import Players from '../screens/signedIn/Players'// (complete)
 
 import AuthenticatedRoute from './AuthenticatedRoute' //(complete)
 
@@ -20,7 +20,7 @@ const Routes = ({ user, rosters, players, setUser, clearUser, addRoster, addPlay
         <Route
             exact
             path='/'
-            render={props => (user ? <Home/> : <Landing {...props} rosters={rosters} players={players} />)}
+            render={props => (user ? <Home {...props} rosters={rosters} players={players}/>  : <Landing/>)}
             // render={() => <Landing/>}
             // render={() => <Home/>}
 
@@ -46,6 +46,24 @@ const Routes = ({ user, rosters, players, setUser, clearUser, addRoster, addPlay
             path='/rosters'
             user={user}
             render={props => <Rosters {...props} user={user} rosters={rosters}/>}
+        />
+        <AuthenticatedRoute
+            exact
+            path='/rosters/:id'
+            user={user}
+            render={props => <Roster {...props} />}
+        />
+        <AuthenticatedRoute
+            exact
+            path='/players'
+            user={user}
+            render={props => <Players {...props} user={user} players={players}/>}
+        />
+        <AuthenticatedRoute
+            exact
+            path='/players/:id'
+            user={user}
+            render={props => <Player {...props} />}
         />
 
     </Switch>
