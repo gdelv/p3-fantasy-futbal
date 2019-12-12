@@ -23,6 +23,7 @@ class Roster extends Component {
     }
 
     destroy = () => {
+        
         deleteRoster(this.state.roster.id)
             .then(() => this.setState({ deleted: true }))
             .catch(console.error)
@@ -32,7 +33,7 @@ class Roster extends Component {
         const { roster, deleted } = this.state
 
         if (!roster) {
-            return <p>Loading...</p>
+            return <p>Roster has been deleted...</p>
         }
 
         if (deleted) {
@@ -53,7 +54,8 @@ class Roster extends Component {
                 </Link>
                 <h4>{roster.title}</h4>
                 <div className='buttons'>
-                    <button className='danger' onClick={this.destroy}>
+                    <button className='danger' onClick={e => {this.destroy()
+                this.props.history.push('/')} }>
                         Delete Roster
                     </button>
                     <button

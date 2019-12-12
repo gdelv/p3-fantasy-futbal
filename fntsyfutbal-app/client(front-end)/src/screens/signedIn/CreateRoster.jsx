@@ -50,7 +50,7 @@ class CreateRoster extends Component {
         const { history } = this.props
 
         if (createdRoster) {
-            return <Redirect to={`/rosters`} />
+            return <Redirect to={`/`} />
         }
 
         // return (

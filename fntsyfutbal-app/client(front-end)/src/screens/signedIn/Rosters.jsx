@@ -9,7 +9,7 @@ export default function Rosters(props) {
                 <button onClick={() => history.push(`${match.url}/${id}`)}>
                     See More
                 </button>
-            )
+            )   
         } else {
             return null
         }
