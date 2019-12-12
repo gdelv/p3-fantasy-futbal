@@ -12,18 +12,31 @@ router.post('/sign-up', controllers.join)
 //Logs in account
 router.post('/sign-in', controllers.logIn)
 
-
+//get all users/rosters/players
 router.get('/users', controllers.getAllUsers)
-// router.get('/rosters', controllers.getAllRosters)
-// router.get('/rosters/:id', controllers.getRosterById)
 
-// router.post('/rosters', controllers.createRoster)
-
-// router.put('/rosters/:id', controllers.updateRoster)
-
-// router.delete('/rosters/:id', controllers.deleteRoster)
+router.get('/rosters', controllers.getAllRosters)
 
 router.get('/players', controllers.getAllPlayers)
+
+//get roster/player by ID
+router.get('/rosters/:id', controllers.getRosterById)
+// router.get('/players/:id', controllers.getPlayerById)
+
+//create roster/player
+router.post('/rosters', controllers.createRoster)
+// router.post('/players', restrict, controllers.createPlayer)
+
+//edit roster/player
+// router.put('/rosters/:id', restrict, controllers.updateRoster)
+// router.put('/players/:id', restrict, controllers.updatePlayer)
+
+//delete roster/player
+// router.delete('/rosters/:id', restrict, controllers.deleteRoster)
+// router.delete('/players/:id', restrict, controllers.deletePlayer)
+
+
+
 
 
 module.exports = router
