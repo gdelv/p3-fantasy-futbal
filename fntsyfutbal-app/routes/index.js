@@ -12,7 +12,7 @@ router.post('/sign-up', controllers.join)
 router.post('/sign-in', controllers.logIn)
 
 
-// router.get('/users', controllers.getAllUsers)
+router.get('/users', controllers.getAllUsers)
 // router.get('/rosters', controllers.getAllRosters)
 // router.get('/rosters/:id', controllers.getRosterById)
 
