@@ -167,11 +167,15 @@ const updateRoster = async (req, res) => {
 }
 
 const deleteRoster = async (req, res) => {
+    console.log('here')
     try {
         const { id } = req.params
         const deleted = await Roster.destroy({
             where: { id: id }
         })
+        // .then(()=>{
+        //     getAllRosters()
+        // })
         if (deleted) {
             return res.status(202).send('Item deleted')
         }
