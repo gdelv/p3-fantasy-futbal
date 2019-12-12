@@ -7,8 +7,9 @@ import SignOut from '../screens/signedOut/SignOut'//(complete)
 import SignUp from '../screens/signedOut/Join' //sign-up page (complete)
 import Roster from '../screens/signedIn/Roster'//(complete)
 import Rosters from '../screens/signedIn/Rosters'//(complete)
-// import RosterCreate from '../screens/RosterCreate'//needs to be created
-// import RosterEdit from '../screens/RosterEdit'//needs to be created
+import RosterCreate from '../screens/signedIn/CreateRoster'//needs to be created
+import RosterEdit from '../screens/signedIn/RosterEdit' //(complete)
+// import PlayersEdit from '../screens/signedIn/EditPlayers'//needs to be created
 
 import Player from '../screens/signedIn/Player'//(complete)
 import Players from '../screens/signedIn/Players'// (complete)
@@ -20,32 +21,34 @@ const Routes = ({ user, rosters, players, setUser, clearUser, addRoster, addPlay
         <Route
             exact
             path='/'
-            render={props => (user ? <Home {...props} rosters={rosters} players={players}/>  : <Landing/>)}
-            // render={() => <Landing/>}
-            // render={() => <Home/>}
+            // render={props => (user ? <Landing /> : <Home {...props} rosters={rosters} players={players} />  )}
+            render={props => (user ?  <Home {...props} rosters={rosters} players={players} /> :<Landing />  )}
+
+        // render={() => <Landing/>}
+        // render={() => <Home/>}
 
         />
         <Route
             exact
             path='/sign-in'
-            render={props => <SignIn {...props} setUser={setUser} user={user}/>}
+            render={props => <SignIn {...props} setUser={setUser} user={user} />}
         />
         <Route
             exact
             path='/sign-up'
-            render={props => <SignUp {...props} setUser={setUser}/>}
-            // render={() => <SignUp/>}
+            render={props => <SignUp {...props} setUser={setUser} />}
+        // render={() => <SignUp/>}
         />
         <Route
             exact
             path='/sign-out'
-            render={props => <SignOut {...props} clearUser={clearUser} user={user}/>}
+            render={props => <SignOut {...props} clearUser={clearUser} user={user} />}
         />
         <AuthenticatedRoute
             exact
             path='/rosters'
             user={user}
-            render={props => <Rosters {...props} user={user} rosters={rosters}/>}
+            render={props => <Rosters {...props} user={user} rosters={rosters} />}
         />
         <AuthenticatedRoute
             exact
@@ -55,9 +58,20 @@ const Routes = ({ user, rosters, players, setUser, clearUser, addRoster, addPlay
         />
         <AuthenticatedRoute
             exact
+            user={user}
+            path="/rosters/:id/edit"
+            render={props => <RosterEdit {...props} />}
+        />
+        <AuthenticatedRoute
+            user={user}
+            path="/create"
+            render={props => <RosterCreate {...props} addRoster={addRoster} />}
+        />
+        <AuthenticatedRoute
+            exact
             path='/players'
             user={user}
-            render={props => <Players {...props} user={user} players={players}/>}
+            render={props => <Players {...props} user={user} players={players} />}
         />
         <AuthenticatedRoute
             exact
