@@ -1,12 +1,13 @@
 import React, {Component} from 'react'
-import Redirect from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
 import {getPlayerById, updatePlayer} from '../../services/players'
+import Layout from '../../components/shared/Layout'
 
 class EditPlayers extends Component {
     constructor(props){
         super(props)
         
-        this.State = {
+        this.state = {
             player: {
                 title: '',
                 link: ''
