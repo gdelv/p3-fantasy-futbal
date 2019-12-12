@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import Redirect from 'react-router-dom'
-import {getPlayerById updatePlayer} from ''
+import {getPlayerById, updatePlayer} from '../../services/players'
 
 class EditPlayers extends Component {
     constructor(props){
