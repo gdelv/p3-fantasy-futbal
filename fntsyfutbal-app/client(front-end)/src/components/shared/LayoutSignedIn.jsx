@@ -1,18 +1,18 @@
-import React from 'react'
+// import React from 'react'
 
 
-import NavSignedIn from './NavSignedIn'
-import Footer from './Footer'
+// import NavSignedIn from './NavSignedIn'
+// import Footer from './Footer'
 
-const Layout = props => (
-    <div>
-        <h1>Fantasy Futbal</h1> 
-        <NavSignedIn />
+// const Layout = props => (
+//     <div>
+//         <h1>Fantasy Futbal</h1> 
+//         <NavSignedIn />
 
-        {props.children}
+//         {props.children}
 
-        <Footer />
-    </div>
-)
+//         <Footer />
+//     </div>
+// )
 
-export default Layout
+// export default Layout

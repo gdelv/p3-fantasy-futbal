@@ -81,6 +81,8 @@ const getAllUsers = async (req,res) => {
         return res.status(500).send(error.message)
     }
 }
+
+
 const getAllPlayers = async(req,res)=>{
     const players = await Player.findAll()
     res.send(players)
