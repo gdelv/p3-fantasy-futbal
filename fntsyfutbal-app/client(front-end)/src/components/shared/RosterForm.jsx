@@ -13,7 +13,7 @@ const RosterForm = ({
 			<input
 				placeholder='Roster Title.'
 				value={roster.title}
-				name='roster title'
+				name='title'
 				required
 				onChange={handleChange}
 			/>

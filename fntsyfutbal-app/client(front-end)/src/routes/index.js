@@ -11,8 +11,8 @@ import RosterCreate from '../screens/signedIn/CreateRoster'//needs to be created
 import RosterEdit from '../screens/signedIn/RosterEdit' //(complete)
 // import PlayersEdit from '../screens/signedIn/EditPlayers'//needs to be created
 
-import Player from '../screens/signedIn/Player'//(complete)
-import Players from '../screens/signedIn/Players'// (complete)
+// import Player from '../screens/signedIn/Player'//(complete)
+// import Players from '../screens/signedIn/Players'// (complete)
 
 import AuthenticatedRoute from './AuthenticatedRoute' //(complete)
 
@@ -67,7 +67,7 @@ const Routes = ({ user, rosters, players, setUser, clearUser, addRoster, addPlay
             path="/create"
             render={props => <RosterCreate {...props} addRoster={addRoster} />}
         />
-        <AuthenticatedRoute
+        {/* <AuthenticatedRoute
             exact
             path='/players'
             user={user}
@@ -78,7 +78,7 @@ const Routes = ({ user, rosters, players, setUser, clearUser, addRoster, addPlay
             path='/players/:id'
             user={user}
             render={props => <Player {...props} />}
-        />
+        /> */}
 
     </Switch>
 
