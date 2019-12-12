@@ -5,3 +5,30 @@
     padding: 10px;
     border-radius: 20px;
 }
+
+.create-button{
+    font-weight: 800; 
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    text-decoration: none;
+    background: #829155;
+    color: white;
+    font-size: 1rem;
+    padding: 15px;
+    border-radius: 10px;
+    width: 40%;
+
+}
+
+.sign-in{
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    color: black;
+    margin-top: 3%;
+}
+
+.sign-in:hover{
+    color: #B10000;
+}
