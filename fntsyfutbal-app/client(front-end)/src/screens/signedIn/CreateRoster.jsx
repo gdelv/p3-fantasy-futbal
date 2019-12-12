@@ -20,10 +20,14 @@ class CreateRoster extends Component {
     }
 
     handleChange = event => {
-        const updatedField = { [event.target.name]: event.target.value }
-        const editedRoster = Object.assign(this.state.roster.title, updatedField)
+        const target = event.target;
+        const value = target.value;
+        const name = target.name;
+
         this.setState({
-            roster: editedRoster
+            roster: {
+                [name]: value
+            }
         })
     }
 
