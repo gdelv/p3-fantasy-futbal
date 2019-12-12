@@ -13,6 +13,15 @@
     
 }
 
+/* main nav {
+    height: 20%;
+    background-color: #215F96;
+    border: 1px solid white;
+    display: flex;
+    justify-content: space-between;
+    /* color: white; */
+} */
+
 
 .title {
     display: flex;
@@ -20,10 +29,10 @@
     
 }
 
-a.navList {
+/* a.navList {
     text-decoration: none;
     color: white;
-}
+} */
 
 /* .navbar .nav-items{
   
@@ -66,4 +75,8 @@ box-shadow: 5px 5px 5px rgba(68,68,68,0.6)
 .form h3{
     text-align: center;
     color: red;
+}
+
+.form {
+    margin: 25%;
 }
