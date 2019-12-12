@@ -22,3 +22,14 @@ export const logIn = async credentials => {
     }
 }
 
+
+
+//SignOut Account (signOut)
+export const signOut = async user => {
+    try {
+        await localStorage.clear()
+        return true
+    } catch(error) {
+        throw error
+    }
+}
