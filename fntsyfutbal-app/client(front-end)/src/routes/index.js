@@ -36,20 +36,12 @@ const Routes = ({ user, rosters, players, setUser, clearUser, addRoster, addPlay
             render={props => <SignUp {...props} setUser={setUser}/>}
             // render={() => <SignUp/>}
         />
-<<<<<<< HEAD
-        {/* <Route
-            exact
-            path='create-roster'
-            render={() => <RosterCreate/>} 
-        /> */}
-=======
         <Route
             exact
             path='/sign-out'
             render={props => <SignOut {...props} clearUser={clearUser} user={user}/>}
         />
 
->>>>>>> 9459763a2ec671be381d9f6775f4226964eb39b4
     </Switch>
 
 )
