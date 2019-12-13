@@ -12,7 +12,7 @@ const CreateAccForm = (props) => {
        <div className='form-container'>
   
         <form className='form' onSubmit={(e) => onSubmit(e)}>
-        <h3 className='formTitle'>Create your account</h3>
+        {/* <h3 className='formTitle'>Create your account</h3> */}
             <Input
                 name='username'
                 value={username}
@@ -56,9 +56,10 @@ const CreateAccForm = (props) => {
                 placeholder='Image URL'
                 onChange={(e) => onChange(e)}
             />
-
-            <Button title='Submit' className='submitCreateAcc' />
-
+            <div className= 'account-buttons'>
+                <Button title='Create Account' className='create-button' />
+                <Button title='Cancel' className='create-button' />
+            </div>
         </form>
         </div>
     )

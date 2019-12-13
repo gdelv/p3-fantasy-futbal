@@ -13,15 +13,6 @@
     
 }
 
-/* main nav {
-    height: 20%;
-    background-color: #215F96;
-    border: 1px solid white;
-    display: flex;
-    justify-content: space-between;
-    /* color: white; */
-} */
-
 
 .title {
     display: flex;
@@ -29,24 +20,23 @@
     
 }
 
-/* a.navList {
+a.navList {
     text-decoration: none;
     color: white;
-} */
+} 
 
 /* .navbar .nav-items{
   
 } */
 
-
 .title img{
     margin: 4% 2% 0% 0%;
-    /* border: 1px solid red; */
+    border: 1px solid red;
     width: 10%;
     height: 55%;
     
 
-}
+} 
 .giphy h3{
     text-align: center;
 }
