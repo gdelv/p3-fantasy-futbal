@@ -44,7 +44,7 @@ class RosterEdit extends Component {
         const { handleChange, handleSubmit } = this
 
         if (updated) {
-            return <Redirect to={`/rosters${this.props.match.params.id}`} />
+            return <Redirect to={`/rosters/${this.props.match.params.id}`} />
         }
 
         return (
