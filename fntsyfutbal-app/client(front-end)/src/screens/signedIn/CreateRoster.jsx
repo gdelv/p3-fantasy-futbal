@@ -13,7 +13,26 @@ class CreateRoster extends Component {
         this.state = {
             roster: {
                 title: "",
-                // link: ""
+                player1: "",
+                imgUrl1: "",
+                player2: "",
+                imgUrl2: "",
+                player3: "",
+                imgUrl3: "",
+                player4: "",
+                imgUrl4: "",
+                player5: "",
+                imgUrl5: "",
+                player6: "",
+                imgUrl6: "",
+                player7: "",
+                imgUrl7: "",
+                player8: "",
+                imgUrl8: "",
+                player9: "",
+                imgUrl9: "",
+                player10: "",
+                imgUrl10: "",
             },
             createdRoster: null
         }
@@ -24,11 +43,10 @@ class CreateRoster extends Component {
         const value = target.value;
         const name = target.name;
 
-        this.setState({
-            roster: {
-                [name]: value
-            }
-        })
+        this.setState(prevState => ({
+            roster: { ...prevState.roster, [name]: value }
+
+        }))
     }
 
     handleSubmit = event => {
@@ -37,13 +55,14 @@ class CreateRoster extends Component {
         createRoster(this.state.roster)
             .then(res =>
                 res.status === 201
-                    ? this.setState({ createdRoster: res.data.roster})
+                    ? this.setState({ createdRoster: res.data.roster })
                     : null
             )
             .catch(console.error)
     }
 
     render() {
+        console.log(this.state)
         const { handleChange, handleSubmit } = this
         const { createdRoster, roster } = this.state
         // console.log(this.state)
@@ -53,38 +72,17 @@ class CreateRoster extends Component {
             return <Redirect to={`/`} />
         }
 
-        // return (
-        //     <Layout>
-        //         <form name="Roster-Form">
-        //             <input
-        //                 type="text"
-        //                 name='inputTitle'
-        //                 title={this.title.state}
-        //                 history={history}
-        //                 placeholder='Roster Title'
-        //                 onChange={handleChange()}
-        //                 handleSubmit={handleSubmit}
-        //                 cancelPath='/'
-        //             />
-
-        //             <NavLink to='addPlayers'>
-        //                 <Button title='Add Players' className='submitCreateRoster' />
-        //             </NavLink>
-
-        //         </form>
-        //     </Layout>
-        // )
         return (
             <Layout>
-              <RosterForm
-                roster={roster}
-                history={history}
-                handleChange={handleChange}
-                handleSubmit={handleSubmit}
-                cancelPath="/"
-              />
+                <RosterForm
+                    roster={roster}
+                    history={history}
+                    handleChange={handleChange}
+                    handleSubmit={handleSubmit}
+                    cancelPath="/"
+                />
             </Layout>
-          )
+        )
 
     }
 }
