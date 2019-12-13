@@ -139,7 +139,7 @@ const createRoster = async (req, res) => {
         const createdRoster = await Roster.create(req.body)
 
         return res.status(201).json({
-            user: {
+            roster: {
                 createdRoster
             }
         })
