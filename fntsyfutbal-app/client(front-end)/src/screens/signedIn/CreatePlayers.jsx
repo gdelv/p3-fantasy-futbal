@@ -3,9 +3,9 @@ import { Redirect } from 'react-router-dom'
 import Layout from '../../components/shared/Layout'
 import { Button } from '../../components/shared/Button'
 import { NavLink } from 'react-router-dom'
-import { createPlayer } from ''
+import { createPlayer } from '../../services/players'
 
-class CreatePlayer extends Component {
+class CreatePlayers extends Component {
     constructor(props) {
         super(props)
 
@@ -45,7 +45,7 @@ class CreatePlayer extends Component {
     render() {
         const { handleChange, handleSubmit } = this
         const { createdPlayer, title } = this.state
-        console.log(this.state)
+        // console.log(this.state)
         const { history } = this.props
 
         if (createdPlayer) {
@@ -54,26 +54,26 @@ class CreatePlayer extends Component {
 
         return (
             <Layout>
-                <form name="Player-Form">
+                {/* <form name="Player-Form">
                     <p>First Forward</p>
                     <input
                         type="text"
                         name='Forward1'
-                        title={this.title.state}
+                        title={title}
                         history={history}
                         placeholder='Roster Title'
-                        onChange={this.handleChange()}
-                        handleSubmit={this.handleSubmit}
+                        onChange={handleChange}
+                        handleSubmit={handleSubmit}
                         cancelPath='/'
                     />
                     <p>Second Forward</p>
                     <input
                         type="text"
                         name='Forward2'
-                        title={this.title.state}
+                        title={this.state.second}
                         history={history}
                         placeholder='Roster Title'
-                        onChange={this.handleChange()}
+                        onChange={handleChange}
                         handleSubmit={this.handleSubmit}
                         cancelPath='/'
                     />
@@ -175,17 +175,17 @@ class CreatePlayer extends Component {
                         onChange={this.handleChange()}
                         handleSubmit={this.handleSubmit}
                         cancelPath='/'
-                    />
+                    /> */}
 
                     <NavLink to='addPlayers'>
                         <Button title='Add Players' className='submitCreateRoster' />
                     </NavLink>
 
-                </form>
+                {/* </form> */}
             </Layout>
         )
     }
 }
 
 
-export default CreatePlayer
+export default CreatePlayers

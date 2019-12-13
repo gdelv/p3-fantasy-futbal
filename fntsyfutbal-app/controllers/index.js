@@ -87,6 +87,7 @@ const getAllPlayers = async(req,res)=>{
     const players = await Player.findAll()
     res.send(players)
 }
+
 const getPlayersRosters = async (req, res) => {
     console.log('inside contoller')
     try {
@@ -103,7 +104,6 @@ const getPlayersRosters = async (req, res) => {
     catch (error) {
         return res.status(500).send(error.message)
     }
-  
 }
 
 const getRosterById = async (req, res) => {
@@ -121,8 +121,6 @@ const getRosterById = async (req, res) => {
     }
 }
 
-// const changePassword 
-
 const getAllRosters = async (req, res) => {
     console.log('here')
     try {
@@ -135,8 +133,14 @@ const getAllRosters = async (req, res) => {
 
 const createRoster = async (req, res) => {
     try {
-        console.log('req.body:', req.body)
-        const createdRoster = await Roster.create(req.body)
+        const {title, player1, imgUrl1} = req.body
+        console.log('this is req.body', req.body)
+        console.log(imgUrl1)
+        const createdRoster = await Roster.create({
+            title,
+            player1,
+            imgUrl1
+        })
 
         return res.status(201).json({
             roster: {
