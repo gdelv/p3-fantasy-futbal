@@ -4,7 +4,7 @@ import Button from './Button'
 
 const Nav = () => (
     <nav>
-        <NavLink to='/'>Home</NavLink>
+        <NavLink to='/'>Fantasy Futball</NavLink>
         <h3>ACCOUNT NAME</h3>
         <NavLink to='/login'>Log Out</NavLink>
         <NavLink to='/login/:id/roster'>

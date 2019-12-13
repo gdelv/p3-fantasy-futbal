@@ -152,8 +152,24 @@ box-shadow: 5px 5px 5px rgba(68,68,68,0.6)
 }
 
 .layout .content{
+    position: relative;
     border: 1px solid blue;
+    margin-top: 0 ; 
     
+}
+
+.layout .content img{
+    width: 100%;
+}
+
+.links {
+    display: flex;
+}
+
+.links img{
+    margin: 5% 2%;
+    width: 10%;
+  
 }
 
 /* .join-page .join-header {
