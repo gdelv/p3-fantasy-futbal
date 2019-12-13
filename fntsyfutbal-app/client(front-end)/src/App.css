@@ -134,9 +134,14 @@ a.sign-in:hover {
 /* Create Account Form */
 
 .row .form-container {
-    border: 1px solid purple;
+    /* border: 1px solid purple; */
     display: flex;
     flex-direction: column;   
+}
+
+.form-container label {
+    position: relative;
+    left: 35%;
 }
 
 .account-buttons{
@@ -147,6 +152,24 @@ a.sign-in:hover {
     display: flex;
     justify-content: space-around;
     align-self: center;
+
+}
+
+.login-button {
+    display: flex;
+    justify-content: space-around;
+    align-self: center;
+    font-weight: 800; 
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    text-decoration: none;
+    background: #829155;
+    color: white;
+    font-size: 1rem;
+    padding: 15px;
+    border-radius: 10px;
+    width: 40%;
 
 }
 
@@ -181,10 +204,8 @@ a.sign-in:hover {
     width: 4em;
 }
 
-.foot-items {
-    border: none;
-}
-
-button {
-    text-decoration: none
+div .form-container {
+    position: absolute;
+    top: -5em;
+    left: 30%;
 }

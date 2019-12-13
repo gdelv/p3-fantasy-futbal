@@ -50,7 +50,7 @@ class LogIn extends Component {
                 </button>
             )
         } else {
-            return <button type='submit'>Sign In</button>
+            return <button type='submit' className='login-button'>Sign In</button>
         }
     }
 
