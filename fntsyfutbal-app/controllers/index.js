@@ -83,10 +83,19 @@ const getAllUsers = async (req,res) => {
 }
 
 
-const getAllPlayers = async(req,res)=>{
-    const players = await Player.findAll()
-    res.send(players)
+const getAllPlayers = async (req,res) => {
+    try {
+        const players = await Player.findAll();
+        return res.status(200).json({ players })
+    } catch (error) {
+        return res.status(500).send(error.message)
+    }
 }
+
+// const getAllPlayers = async(req,res)=>{
+//     const players = await Player.findAll()
+//     res.send(players)
+// }
 
 const getPlayersRosters = async (req, res) => {
     console.log('inside contoller')
@@ -121,6 +130,22 @@ const getRosterById = async (req, res) => {
     }
 }
 
+const getPlayerById = async (req, res) => {
+    try {
+        const { id } = req.params
+        const player = await Player.findOne({
+            where: { id: id }
+        })
+        if (player) {
+            return res.status(200).json({ player })
+        }
+        return res.status(404).send('Player with the specified ID does not exist')
+    } catch (error) {
+        return res.status(500).send(error.message)
+    }
+}
+
+
 const getAllRosters = async (req, res) => {
     console.log('here')
     try {
@@ -133,13 +158,32 @@ const getAllRosters = async (req, res) => {
 
 const createRoster = async (req, res) => {
     try {
-        const {title, player1, imgUrl1} = req.body
+        const {title, player1, player2,player3,player4,player5,player6,player7,player8,player9,player10,player11,imgUrl1,imgUrl2,imgUrl3,imgUrl4,imgUrl5,imgUrl6,imgUrl7,imgUrl8,imgUrl9,imgUrl10} = req.body
         console.log('this is req.body', req.body)
         console.log(imgUrl1)
         const createdRoster = await Roster.create({
             title,
             player1,
-            imgUrl1
+            player2, 
+            player3, 
+            player4, 
+            player5, 
+            player6, 
+            player7, 
+            player8,
+            player9, 
+            player10, 
+            player11,
+            imgUrl1,
+            imgUrl2,
+            imgUrl3,
+            imgUrl4,
+            imgUrl5,
+            imgUrl6,
+            imgUrl7,
+            imgUrl8,
+            imgUrl9,
+            imgUrl10
         })
 
         return res.status(201).json({
@@ -237,6 +281,7 @@ module.exports = {
     getAllUsers,
     getAllRosters,
     createRoster,
+    getPlayerById,
     getRosterById,
     updateRoster,
     deleteRoster,
