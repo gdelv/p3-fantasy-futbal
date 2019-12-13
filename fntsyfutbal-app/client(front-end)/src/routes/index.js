@@ -22,7 +22,7 @@ const Routes = ({ user, rosters, players, setUser, clearUser, addRoster, addPlay
             exact
             path='/'
             // render={props => (user ? <Landing /> : <Home {...props} rosters={rosters} players={players} />  )}
-            render={props => (user ?  <Home {...props} rosters={rosters} players={players} /> :<Landing />  )}
+            render={props => (user ?  <Home {...props} rosters={rosters} players={players} /> : <Landing />  )}
 
         // render={() => <Landing/>}
         // render={() => <Home/>}

@@ -46,14 +46,9 @@
 // export default LogIn
 
 import React, { Component } from 'react'
-<<<<<<< HEAD
-import { logIn } from "../../services/auth"; //complete for now
-import LogInForm from '../forms/LogInForm';
-import socerball from './../images/socerball.png'
-=======
 import { logIn } from "../../services/auth"; //complete for login feature
-// import LogInForm from '../forms/LogInForm';
->>>>>>> 5599fa65120b447a8fb24791ef1254b3d378634d
+import LogInForm from '../forms/LogInForm';
+import socerball from '../images/socerball.png'
 
 class LogIn extends Component {
     constructor() {

@@ -3,24 +3,26 @@
     font-family:"https://fontmeme.com/ea-sports-font/";
 }
 
-.navbar {
+.nav {
     height: 20%;
     background-color: #215F96;
-    /* border: 1px solid white; */
+    border: 1px solid white;
     display: flex;
     justify-content: space-between;
     color: white;
+    height: 10vh;
     
 }
 
 
-.title {
+/* .title {
     display: flex;
     flex-direction: row;
     
-}
+} */
 
-a.navList {
+.nav a{
+
     position: relative;
     top: 35%;
     padding: 5px;
@@ -29,7 +31,7 @@ a.navList {
     color: white;
 }
 
-.navbar .nav-items{
+.nav .nav-items{
    margin-top: 4% 2% 0% 0%;
 }
 
@@ -42,7 +44,7 @@ a.navList {
     
 }
 
-.hero img{
+.landing img{
     width: 100%;
 }
 
@@ -51,7 +53,7 @@ a.navList {
     text-align: center;
 }
 
-.giphy img{
+.landing .giphy img{
 width: 60%;
 display: flex;
 justify-content: center;
@@ -74,10 +76,7 @@ box-shadow: 5px 5px 5px rgba(68,68,68,0.6)
 
 /* FORM SECTION */
 .form {
-    display: flex;
-    flex-direction: column;
-
-    /* border: 1px solid gray; */
+    /* border: 1px solid blue; */
 
 }
 
@@ -88,7 +87,7 @@ box-shadow: 5px 5px 5px rgba(68,68,68,0.6)
 /* Sign in form*/
 
 .row .form-container {
-    border: 1px solid red;
+    border: 1px grey;
     text-align: center;
     margin-top: 40%;
   
@@ -131,11 +130,11 @@ box-shadow: 5px 5px 5px rgba(68,68,68,0.6)
 
 /* Create Account Form */
 
-.form-container .form{
+.row .form-container {
     border: 1px solid purple;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    /* align-items: center; */
      
 }
 
@@ -145,21 +144,33 @@ box-shadow: 5px 5px 5px rgba(68,68,68,0.6)
 
 }
 
-.join-page .join-header {
+.join-buttons{
+    display: flex;
+    justify-content: space-around;
+    align-self: center;
+
+}
+
+.layout .content{
+    border: 1px solid blue;
+    
+}
+
+/* .join-page .join-header {
 text-align: center;
 background-color: #215F96;
 margin: 0% 0% 0% 0%;
 height: 10vh;
 color: white;
-}
+} */
 
-.join-header img{
+/* .join-header img{
     display: flex;
     width: 10%;
     height: 47%;
-    /* padding-top: 20%; */
-}
+    padding-top: 20%;
+} */
 
-.join-header h4{
+/* .join-header h4{
     margin: 0;
-}
+} */

@@ -1,5 +1,7 @@
 import React from 'react'
 import Layout from '../../components/shared/Layout'
+import herosoccer from '../images/herosoccer.jpg'
+import giphy from '../images/giphy-3.gif'
 
 export default function Rosters(props) {
     const { history, match, user, rosters } = props
@@ -41,7 +43,12 @@ export default function Rosters(props) {
     } else {
         return (
             <div className='landing'>
+                <img src={herosoccer} alt='' />
                 <h2>Welcome to your fantasy futbal rosters</h2>
+                <div className='giphy'>
+                <img src={giphy} alt='' />
+                </div>
+                
                 <div className='main'>
                     {!rosters ? <h3>No Rosters Currently.</h3> : null}
                     <div className='roster-container'>{renderRosters()}</div>
