@@ -5,6 +5,7 @@ import Layout from '../../components/shared/Layout'
 // import { Button } from '../../components/shared/Button'
 // import { NavLink } from 'react-router-dom'
 import { createRoster } from '../../services/rosters'
+import CreatePlayers from './CreatePlayers'
 
 class CreateRoster extends Component {
     constructor(props) {
@@ -83,6 +84,7 @@ class CreateRoster extends Component {
                 handleSubmit={handleSubmit}
                 cancelPath="/"
               />
+              <CreatePlayers/>
             </Layout>
           )
 
