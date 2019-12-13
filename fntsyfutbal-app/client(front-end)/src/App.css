@@ -126,7 +126,7 @@ input {
 
 .create-button {
     height: 60px;
-    width: 125px
+    width: 80%
 }
 
 .sign-in{
@@ -154,6 +154,11 @@ label.signUpLabel {
 
 .account-buttons{
    display: flex;
+}
+
+.signInTitle {
+    margin: 0 auto;
+    margin-bottom: 15px;
 }
 
 .join-buttons{
