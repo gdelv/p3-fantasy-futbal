@@ -1,6 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import Navbar from '../components/shared/Navbar'
+import socerball from './images/socerball.png'
 
 const authenticatedOptions = (
     <div className='links'>
@@ -17,7 +18,9 @@ const unauthenticatedOptions = (
 
 const alwaysOptions = (
     <div className='links'>
-        <NavLink to='/'>Home</NavLink>
+        <img src = {socerball} alt = '' />
+        <NavLink to='/'>Fantasy Futball</NavLink>
+
     </div>
 )
 
