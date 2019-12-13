@@ -81,3 +81,29 @@ box-shadow: 5px 5px 5px rgba(68,68,68,0.6)
   
     
 }
+.roster {
+    margin: 20px;
+    padding: 20px;
+}
+
+.roster-container .roster {
+    border:5px solid black;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+
+}
+.roster-container .roster h3 {
+    margin: 20px;
+}
+
+
+.roster-container .roster p {
+    padding: 1em;
+}
+
+.roster-container .roster img {
+    height: 4em;
+    width: 4em;
+}
