@@ -27,7 +27,7 @@ const RosterForm = ({
 				/>
 				<input
 					placeholder='Image Url'
-					value={roster.imgUlr1}
+					value={roster.imgUrl1}
 					name='imgUrl1'
 					required
 					onChange={handleChange}
@@ -44,7 +44,7 @@ const RosterForm = ({
 				/>
 				<input
 					placeholder='Image Url'
-					value={roster.imgUlr1}
+					value={roster.imgUrl2}
 					name='imgUrl2'
 					required
 					onChange={handleChange}
@@ -61,7 +61,7 @@ const RosterForm = ({
 				/>
 				<input
 					placeholder='Image Url'
-					value={roster.imgUlr1}
+					value={roster.imgUrl3}
 					name='imgUrl3'
 					required
 					onChange={handleChange}
@@ -77,7 +77,7 @@ const RosterForm = ({
 				/>
 				<input
 					placeholder='Image Url'
-					value={roster.imgUlr1}
+					value={roster.imgUrl4}
 					name='imgUrl4'
 					required
 					onChange={handleChange}
@@ -93,7 +93,7 @@ const RosterForm = ({
 				/>
 				<input
 					placeholder='Image Url'
-					value={roster.imgUlr1}
+					value={roster.imgUrl5}
 					name='imgUrl5'
 					required
 					onChange={handleChange}
@@ -109,7 +109,7 @@ const RosterForm = ({
 				/>
 				<input
 					placeholder='Image Url'
-					value={roster.imgUlr1}
+					value={roster.imgUrl6}
 					name='imgUrl6'
 					required
 					onChange={handleChange}
@@ -125,7 +125,7 @@ const RosterForm = ({
 				/>
 				<input
 					placeholder='Image Url'
-					value={roster.imgUlr1}
+					value={roster.imgUrl7}
 					name='imgUrl7'
 					required
 					onChange={handleChange}
@@ -141,7 +141,7 @@ const RosterForm = ({
 				/>
 				<input
 					placeholder='Image Url'
-					value={roster.imgUlr1}
+					value={roster.imgUrl8}
 					name='imgUrl8'
 					required
 					onChange={handleChange}
@@ -157,7 +157,7 @@ const RosterForm = ({
 				/>
 				<input
 					placeholder='Image Url'
-					value={roster.imgUlr1}
+					value={roster.imgUrl9}
 					name='imgUrl9'
 					required
 					onChange={handleChange}
@@ -173,7 +173,7 @@ const RosterForm = ({
 				/>
 				<input
 					placeholder='Image Url'
-					value={roster.imgUlr1}
+					value={roster.imgUrl10}
 					name='imgUrl10'
 					required
 					onChange={handleChange}

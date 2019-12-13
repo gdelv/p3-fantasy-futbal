@@ -5,7 +5,7 @@ import socerball from './images/socerball.png'
 
 const authenticatedOptions = (
     <div className='links'>
-        <NavLink to='/change-password'>Change Password</NavLink>
+        {/* <NavLink to='/change-password'>Change Password</NavLink> */}
         <NavLink to='/sign-out'>Sign Out</NavLink>
     </div>
 )
@@ -27,7 +27,7 @@ const alwaysOptions = (
 
 const Header = ({ user }) => (
     <Navbar>
-        {user && <span className='navbar-text'>Welcome, {user.email}</span>}
+        {user && <span className='navbar-text'>Welcome, {user.username}</span>}
         <div className='nav'>
             {alwaysOptions}
             {user ? authenticatedOptions : unauthenticatedOptions}

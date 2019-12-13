@@ -64,6 +64,17 @@ box-shadow: 5px 5px 5px rgba(68,68,68,0.6)
 .giphy h4{
     text-align: center;
 }
+ h1 {
+     text-align: center;
+ }
+
+h2 {
+    text-align: center;
+}
+
+h3 {
+    text-align: center;
+}
 
 .foot-items {
     color: white;
@@ -131,11 +142,16 @@ box-shadow: 5px 5px 5px rgba(68,68,68,0.6)
 /* Create Account Form */
 
 .row .form-container {
-    border: 1px solid purple;
+    /* border: 1px solid purple; */
     display: flex;
     flex-direction: column;
     /* align-items: center; */
      
+}
+
+.form-container label {
+    position: relative;
+    left: 35%;
 }
 
 .account-buttons{
@@ -151,11 +167,33 @@ box-shadow: 5px 5px 5px rgba(68,68,68,0.6)
 
 }
 
+.login-button {
+    display: flex;
+    justify-content: space-around;
+    align-self: center;
+    font-weight: 800; 
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    text-decoration: none;
+    background: #829155;
+    color: white;
+    font-size: 1rem;
+    padding: 15px;
+    border-radius: 10px;
+    width: 40%;
+
+}
+
 .layout .content{
     position: relative;
     border: 1px solid blue;
     margin-top: 0 ; 
     
+}
+.roster {
+    margin: 20px;
+    padding: 20px;
 }
 
 .layout .content img{
@@ -172,21 +210,30 @@ box-shadow: 5px 5px 5px rgba(68,68,68,0.6)
   
 }
 
-/* .join-page .join-header {
-text-align: center;
-background-color: #215F96;
-margin: 0% 0% 0% 0%;
-height: 10vh;
-color: white;
-} */
+.roster-container .roster {
+    border:5px solid black;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
 
-/* .join-header img{
-    display: flex;
-    width: 10%;
-    height: 47%;
-    padding-top: 20%;
-} */
+.roster-container .roster h3 {
+    margin: 20px;
+}
 
-/* .join-header h4{
-    margin: 0;
-} */
+
+.roster-container .roster p {
+    padding: 1em;
+}
+
+.roster-container .roster img {
+    height: 4em;
+    width: 4em;
+}
+
+div .form-container {
+    position: absolute;
+    top: -5em;
+    left: 30%;
+}
