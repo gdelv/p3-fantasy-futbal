@@ -83,9 +83,13 @@ box-shadow: 5px 5px 5px rgba(68,68,68,0.6)
 }
 
 /* FORM SECTION */
+
+input {
+    color:#93BEFD;
+}
+
 .signUpForm input {
     margin: 0 auto;
-
 }
 
 .form input{
@@ -113,6 +117,7 @@ box-shadow: 5px 5px 5px rgba(68,68,68,0.6)
 .row input{
     padding: 4% 20%;
     border: 1px solid grey;
+    background-color: #E8F0FE ;
     border-radius: 4px;
     margin: 3% 20%;   
     margin-left: auto;
@@ -120,7 +125,7 @@ box-shadow: 5px 5px 5px rgba(68,68,68,0.6)
 }
 
 .create-button {
-    height: 55px;
+    height: 60px;
     width: 125px
 }
 
@@ -171,7 +176,8 @@ label.signUpLabel {
     font-size: 1rem;
     padding: 15px;
     border-radius: 10px;
-    width: 40%;
+    height: 45%;
+    width: 100%;
 
 }
 

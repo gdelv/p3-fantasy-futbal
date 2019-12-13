@@ -62,8 +62,7 @@ class LogIn extends Component {
             <div className='row'>
                 <div className='form-container'>
                     <div className='sign-in'>
-                        <img src={socerball} alt="" />
-                        <h3>Sign In</h3>
+                        <h3 className='signInTitle'>Sign In</h3>
                     </div>
 
                     <form className='placeholder-login' onSubmit={this.onSignIn}>
