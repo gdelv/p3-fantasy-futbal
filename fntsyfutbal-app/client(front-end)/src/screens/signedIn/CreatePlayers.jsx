@@ -54,7 +54,7 @@ class CreatePlayers extends Component {
 
         return (
             <Layout>
-                <form name="Player-Form">
+                {/* <form name="Player-Form">
                     <p>First Forward</p>
                     <input
                         type="text"
@@ -175,13 +175,13 @@ class CreatePlayers extends Component {
                         onChange={this.handleChange()}
                         handleSubmit={this.handleSubmit}
                         cancelPath='/'
-                    />
+                    /> */}
 
                     <NavLink to='addPlayers'>
                         <Button title='Add Players' className='submitCreateRoster' />
                     </NavLink>
 
-                </form>
+                {/* </form> */}
             </Layout>
         )
     }
