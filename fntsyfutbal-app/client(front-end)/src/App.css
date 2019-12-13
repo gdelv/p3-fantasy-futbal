@@ -142,11 +142,16 @@ h3 {
 /* Create Account Form */
 
 .row .form-container {
-    border: 1px solid purple;
+    /* border: 1px solid purple; */
     display: flex;
     flex-direction: column;
     /* align-items: center; */
      
+}
+
+.form-container label {
+    position: relative;
+    left: 35%;
 }
 
 .account-buttons{
@@ -159,6 +164,24 @@ h3 {
     display: flex;
     justify-content: space-around;
     align-self: center;
+
+}
+
+.login-button {
+    display: flex;
+    justify-content: space-around;
+    align-self: center;
+    font-weight: 800; 
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    text-decoration: none;
+    background: #829155;
+    color: white;
+    font-size: 1rem;
+    padding: 15px;
+    border-radius: 10px;
+    width: 40%;
 
 }
 
@@ -191,4 +214,10 @@ h3 {
 .roster-container .roster img {
     height: 4em;
     width: 4em;
+}
+
+div .form-container {
+    position: absolute;
+    top: -5em;
+    left: 30%;
 }

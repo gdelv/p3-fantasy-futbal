@@ -47,7 +47,7 @@
 
 import React, { Component } from 'react'
 import { logIn } from "../../services/auth"; //complete for login feature
-import LogInForm from '../forms/LogInForm';
+// import LogInForm from '../forms/LogInForm';
 import socerball from '../images/socerball.png'
 
 class LogIn extends Component {
@@ -97,7 +97,7 @@ class LogIn extends Component {
                 </button>
             )
         } else {
-            return <button type='submit'>Sign In</button>
+            return <button type='submit' className='login-button'>Sign In</button>
         }
     }
 
