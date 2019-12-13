@@ -52,7 +52,6 @@ export default function Rosters(props) {
                 <div className='landing'>
                     <h1>Welcome to your Fantasy Futball</h1>
                     <div className="giphy">
-                        <h3>Welcome to Fantasy Futball</h3>
                         <img src={g} alt="" />
 
                         <h4>Think you got what it takes to win on the big stage?
