@@ -3,9 +3,9 @@ import { Redirect } from 'react-router-dom'
 import Layout from '../../components/shared/Layout'
 import { Button } from '../../components/shared/Button'
 import { NavLink } from 'react-router-dom'
-import { createPlayer } from ''
+import { createPlayer } from '../../services/players'
 
-class CreatePlayer extends Component {
+class CreatePlayers extends Component {
     constructor(props) {
         super(props)
 
@@ -59,21 +59,21 @@ class CreatePlayer extends Component {
                     <input
                         type="text"
                         name='Forward1'
-                        title={this.title.state}
+                        title={title}
                         history={history}
                         placeholder='Roster Title'
-                        onChange={this.handleChange()}
-                        handleSubmit={this.handleSubmit}
+                        onChange={handleChange}
+                        handleSubmit={handleSubmit}
                         cancelPath='/'
                     />
                     <p>Second Forward</p>
                     <input
                         type="text"
                         name='Forward2'
-                        title={this.title.state}
+                        title={this.state.second}
                         history={history}
                         placeholder='Roster Title'
-                        onChange={this.handleChange()}
+                        onChange={handleChange}
                         handleSubmit={this.handleSubmit}
                         cancelPath='/'
                     />
@@ -188,4 +188,4 @@ class CreatePlayer extends Component {
 }
 
 
-export default CreatePlayer
+export default CreatePlayers

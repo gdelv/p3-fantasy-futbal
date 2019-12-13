@@ -9,12 +9,13 @@ import Roster from '../screens/signedIn/Roster'//(complete)
 import Rosters from '../screens/signedIn/Rosters'//(complete)
 import RosterCreate from '../screens/signedIn/CreateRoster'//needs to be created
 import RosterEdit from '../screens/signedIn/RosterEdit' //(complete)
-// import PlayersEdit from '../screens/signedIn/EditPlayers'//needs to be created
+import CreatePlayer from '../screens/signedIn/CreatePlayers'
 
-// import Player from '../screens/signedIn/Player'//(complete)
-// import Players from '../screens/signedIn/Players'// (complete)
+import Player from '../screens/signedIn/Player'//(complete)
+import Players from '../screens/signedIn/Players'// (complete)
 
 import AuthenticatedRoute from './AuthenticatedRoute' //(complete)
+
 
 const Routes = ({ user, rosters, players, setUser, clearUser, addRoster, addPlayer }) => (
     <Switch>
@@ -22,7 +23,7 @@ const Routes = ({ user, rosters, players, setUser, clearUser, addRoster, addPlay
             exact
             path='/'
             // render={props => (user ? <Landing /> : <Home {...props} rosters={rosters} players={players} />  )}
-            render={props => (user ?  <Home {...props} rosters={rosters} players={players} /> :<Landing />  )}
+            render={props => (user ? <Home {...props} rosters={rosters} players={players} /> : <Landing />)}
 
         // render={() => <Landing/>}
         // render={() => <Home/>}
@@ -67,18 +68,26 @@ const Routes = ({ user, rosters, players, setUser, clearUser, addRoster, addPlay
             path="/create"
             render={props => <RosterCreate {...props} addRoster={addRoster} />}
         />
-        {/* <AuthenticatedRoute
+        <AuthenticatedRoute
             exact
             path='/players'
             user={user}
             render={props => <Players {...props} user={user} players={players} />}
         />
+
         <AuthenticatedRoute
             exact
             path='/players/:id'
             user={user}
             render={props => <Player {...props} />}
-        /> */}
+        />
+
+        <AuthenticatedRoute
+            exact
+            path='/createplayer'
+            user={user}
+            render={props => <CreatePlayer {...props} addPlayer={addPlayer} />}
+        />
 
     </Switch>
 
