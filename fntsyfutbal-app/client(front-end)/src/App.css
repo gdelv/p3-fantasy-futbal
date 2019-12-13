@@ -166,22 +166,29 @@ h3 {
     border: 1px solid blue;
     
 }
+.roster {
+    margin: 20px;
+    padding: 20px;
+}
 
-/* .join-page .join-header {
-text-align: center;
-background-color: #215F96;
-margin: 0% 0% 0% 0%;
-height: 10vh;
-color: white;
-} */
+.roster-container .roster {
+    border:5px solid black;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
 
-/* .join-header img{
-    display: flex;
-    width: 10%;
-    height: 47%;
-    padding-top: 20%;
-} */
+}
+.roster-container .roster h3 {
+    margin: 20px;
+}
 
-/* .join-header h4{
-    margin: 0;
-} */
+
+.roster-container .roster p {
+    padding: 1em;
+}
+
+.roster-container .roster img {
+    height: 4em;
+    width: 4em;
+}

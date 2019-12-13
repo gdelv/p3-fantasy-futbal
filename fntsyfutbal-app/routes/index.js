@@ -21,15 +21,15 @@ router.get('/players', controllers.getAllPlayers)
 
 //get roster/player by ID
 router.get('/rosters/:id', controllers.getRosterById)
-// router.get('/players/:id', controllers.getPlayerById)
+router.get('/players/:id', controllers.getPlayerById)
 
 //create roster/player
-router.post('/rosters', controllers.createRoster)
-router.post('/players', restrict, controllers.createPlayer)
+router.post('/rosters', restrict, controllers.createRoster)
+// router.post('/players', restrict, controllers.createPlayer)
 
 //edit roster/player
 router.put('/rosters/:id', restrict, controllers.updateRoster)
-router.put('/players/:id', restrict, controllers.updatePlayer)
+// router.put('/players/:id', restrict, controllers.updatePlayer)
 
 //delete roster/player
 router.delete('/rosters/:id', controllers.deleteRoster)
