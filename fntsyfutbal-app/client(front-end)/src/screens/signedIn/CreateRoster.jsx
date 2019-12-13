@@ -2,8 +2,6 @@ import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
 import RosterForm from '../../components/shared/RosterForm'
 import Layout from '../../components/shared/Layout'
-// import { Button } from '../../components/shared/Button'
-// import { NavLink } from 'react-router-dom'
 import { createRoster } from '../../services/rosters'
 
 class CreateRoster extends Component {

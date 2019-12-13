@@ -1,54 +1,7 @@
-// import React from 'react'
-// import Layout from '../../components/shared/Layout'
-// import LogInForm from '../forms/LogInForm'
-// import { api } from '../../services/apiConfig'
-
-// class LogIn extends React.Component {
-//     constructor(props) {
-//         super(props)
-//         this.state = {
-//             username: '',
-//             password: '',
-//             errorMsg: ''
-//         }
-//     }
-
-//     handleSubmit = (event) => {
-//         event.preventDefault()
-//         const { username, password} = this.state
-//         const data = {
-//             username,
-//             password
-//         }
-//         api.post('/users', data)
-//             .then((response) => response.status === 201 ? this.props.history.push('/') : null)
-//             .catch(() => this.setState({ errorMsg: 'There was an error' }))
-//     }
-
-//     handleChange = e => this.setState({ [e.target.name]: e.target.value })
-
-//     render() {
-//         const { username, password } = this.state
-//         return (
-//             <Layout>
-//                 <h4>Log In to your account!</h4>
-//                 <LogInForm
-//                     formData={{ username, password }}
-//                     onChange={this.handleChange}
-//                     onSubmit={this.handleSubmit}
-//                 />
-//             </Layout>
-//         )
-//     }
-// }
-
-
-// export default LogIn
-
 import React, { Component } from 'react'
-import { logIn } from "../../services/auth"; //complete for login feature
-// import LogInForm from '../forms/LogInForm';
+import { logIn } from "../../services/auth"; 
 import socerball from '../images/socerball.png'
+import Layout from '../../components/shared/Layout';
 
 class LogIn extends Component {
     constructor() {
@@ -105,16 +58,15 @@ class LogIn extends Component {
         const { username, password } = this.state
 
         return (
-            // <LogInForm formData={username, password} handleChange={this.handleChange}/>
-            // <LogInForm/>
+        
             <div className='row'>
                 <div className='form-container'>
                     <div className='sign-in'>
                         <img src={socerball} alt="" />
                         <h3>Sign In</h3>
                     </div>
-                    {/* <div className='placeholder-login'> */}
-                    <form onSubmit={this.onSignIn}>
+
+                    <form className='placeholder-login' onSubmit={this.onSignIn}>
                         <label>Username</label>
                         <input
                             required
@@ -135,7 +87,6 @@ class LogIn extends Component {
                         />
                         {this.renderError()}
                     </form>
-                    {/* </div> */}
                 </div>
             </div>
         )

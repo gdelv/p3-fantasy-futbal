@@ -1,11 +1,10 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-import Navbar from '../components/shared/Navbar' //complete
+import Navbar from '../components/shared/Navbar'
 import socerball from './images/socerball.png'
 
 const authenticatedOptions = (
     <div className='links'>
-        {/* <NavLink to='/change-password'>Change Password</NavLink> */}
         <NavLink to='/sign-out'>Sign Out</NavLink>
     </div>
 )
