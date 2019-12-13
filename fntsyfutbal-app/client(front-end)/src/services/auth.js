@@ -1,6 +1,5 @@
 import api from './apiConfig'
 
-//Create Account (signUp)
 export const join = async credentials => {
     try {
         const resp = await api.post('/sign-up', credentials)
@@ -11,7 +10,6 @@ export const join = async credentials => {
     }
 }
 
-//Login Account (signInUser)
 export const logIn = async credentials => {
     try {
         const resp = await api.post('/sign-in', credentials)
@@ -23,8 +21,6 @@ export const logIn = async credentials => {
 }
 
 
-
-//SignOut Account (signOut)
 export const signOut = async user => {
     try {
         await localStorage.clear()

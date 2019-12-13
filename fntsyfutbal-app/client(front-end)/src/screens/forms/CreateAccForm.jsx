@@ -12,7 +12,6 @@ const CreateAccForm = (props) => {
        <div className='form-container'>
   
         <form className='form' onSubmit={(e) => onSubmit(e)}>
-        {/* <h3 className='formTitle'>Create your account</h3> */}
             <Input
                 name='username'
                 value={username}

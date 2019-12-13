@@ -5,7 +5,6 @@ const logger = require('morgan')
 const routes = require('./routes')
 
 const app = express();
-// console.log('goodbye')
 app.use(cors())
 app.use(bodyParser.json())
 app.use(logger('dev'))

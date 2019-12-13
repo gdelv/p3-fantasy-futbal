@@ -1,10 +1,9 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-import Navbar from '../components/shared/Navbar' //complete
+import Navbar from '../components/shared/Navbar'
 
 const authenticatedOptions = (
     <div className='links'>
-        {/* <NavLink to='/change-password'>Change Password</NavLink> */}
         <NavLink to='/sign-out'>Sign Out</NavLink>
     </div>
 )
