@@ -186,12 +186,28 @@ h3 {
 }
 
 .layout .content{
+    position: relative;
     border: 1px solid blue;
+    margin-top: 0 ; 
     
 }
 .roster {
     margin: 20px;
     padding: 20px;
+}
+
+.layout .content img{
+    width: 100%;
+}
+
+.links {
+    display: flex;
+}
+
+.links img{
+    margin: 5% 2%;
+    width: 10%;
+  
 }
 
 .roster-container .roster {
@@ -200,8 +216,8 @@ h3 {
     flex-direction: row;
     justify-content: space-evenly;
     flex-wrap: wrap;
-
 }
+
 .roster-container .roster h3 {
     margin: 20px;
 }
