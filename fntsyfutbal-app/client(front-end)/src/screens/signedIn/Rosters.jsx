@@ -61,19 +61,19 @@ export default function Rosters(props) {
                             Select players from all competitions to create the most
                             most dominant in Futball history.
         </h4>
-        </div>
+                    </div>
                     <div className='main'>
                         {!rosters ? <h3>No Rosters Currently. Sign in or create an account to begin!</h3> : null}
                         <div className='roster-container'>{renderRosters()}</div>
                     </div>
                 </div>
 
-                        <NavLink to='join'>
-                            <Button title='Create Account' className='create-button' />
-                        </NavLink>
+                <NavLink to='join'>
+                    <Button title='Create Account' className='create-button' />
+                </NavLink>
 
-                        <NavLink to='login' className='sign-in'>
-                            Sign in
+                <NavLink to='login' className='sign-in'>
+                    Sign in
         </NavLink>
 
 
