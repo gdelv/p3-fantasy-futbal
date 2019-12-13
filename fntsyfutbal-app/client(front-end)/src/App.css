@@ -1,3 +1,19 @@
+h1 {
+    text-align: center;
+}
+
+h2 {
+   text-align: center;
+}
+
+h3 {
+   text-align: center;
+}
+
+h1, h2, h3 {
+    font-family: 'Viga', sans-serif;
+}
+
 .App {
     text-align: center;
     font-family:"https://fontmeme.com/ea-sports-font/";
@@ -13,13 +29,6 @@
     height: 10vh;
     
 }
-
-
-/* .title {
-    display: flex;
-    flex-direction: row;
-    
-} */
 
 .nav a {
 
@@ -63,18 +72,6 @@ box-shadow: 5px 5px 5px rgba(68,68,68,0.6)
 .giphy h4{
     text-align: center;
 }
- h1 {
-     text-align: center;
-
- }
-
-h2 {
-    text-align: center;
-}
-
-h3 {
-    text-align: center;
-}
 
 .foot-items {
     color: white;
@@ -86,9 +83,13 @@ h3 {
 }
 
 /* FORM SECTION */
-.form {
-    /* border: 1px solid blue; */
 
+input {
+    color:#93BEFD;
+}
+
+.signUpForm input {
+    margin: 0 auto;
 }
 
 .form input{
@@ -111,16 +112,21 @@ h3 {
     color:#93BEFD;
     font-weight: 700;
     margin-top: 5% 0%;
-    
-
 }
 
 .row input{
     padding: 4% 20%;
     border: 1px solid grey;
+    background-color: #E8F0FE ;
     border-radius: 4px;
-    margin: 3% 20%;
-    
+    margin: 3% 20%;   
+    margin-left: auto;
+    margin-right: auto
+}
+
+.create-button {
+    height: 60px;
+    width: 80%
 }
 
 .sign-in{
@@ -131,7 +137,9 @@ a.sign-in:hover {
     color: red
 }
 
-/* Create Account Form */
+label.signUpLabel {
+    text-align: center;
+}
 
 .row .form-container {
     /* border: 1px solid purple; */
@@ -148,11 +156,15 @@ a.sign-in:hover {
    display: flex;
 }
 
+.signInTitle {
+    margin: 0 auto;
+    margin-bottom: 15px;
+}
+
 .join-buttons{
     display: flex;
     justify-content: space-around;
     align-self: center;
-
 }
 
 .login-button {
@@ -169,7 +181,8 @@ a.sign-in:hover {
     font-size: 1rem;
     padding: 15px;
     border-radius: 10px;
-    width: 40%;
+    height: 45%;
+    width: 100%;
 
 }
 
@@ -193,9 +206,9 @@ a.sign-in:hover {
 }
 
 .links img{
-    margin: 5% 2%;
+    margin: 4% 2%;
     width: 10%;
-  
+    height: 55%;
 }
 
 .roster-container .roster {

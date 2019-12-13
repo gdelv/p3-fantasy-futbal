@@ -52,9 +52,7 @@ class SignUp extends Component {
                 {this.state.errorMsg}
             </button>
             )
-        } else {
-            // return <button type='submit'>Sign In</button>
-        }
+        } 
     }
     render() {
         const { email, username, password, passwordConfirmation } = this.state
@@ -62,9 +60,9 @@ class SignUp extends Component {
         return(
             <div className='row'>
                 <div className='form-container'>
-                    <h3>Sign Up</h3>
-                    <form onSubmit={this.onSignUp}>
-                        <label>Username</label>
+                    <h2>SIGN UP</h2>
+                    <form className='signUpForm'onSubmit={this.onSignUp}>
+                        <label className='signUpLabel'>Username</label>
                         <input
                             required
                             type='text'
@@ -73,7 +71,7 @@ class SignUp extends Component {
                             placeholder='Enter username'
                             onChange={this.handleChange}
                         />
-                        <label>Email address</label>
+                        <label className='signUpLabel'>Email address</label>
                         <input
                             required
                             type='text'
@@ -82,7 +80,7 @@ class SignUp extends Component {
                             placeholder='Enter email'
                             onChange={this.handleChange}
                         />
-                        <label>Password</label>
+                        <label className='signUpLabel'>Password</label>
                         <input
                             required
                             type='text'
@@ -91,7 +89,7 @@ class SignUp extends Component {
                             placeholder='Enter password'
                             onChange={this.handleChange}
                         />
-                        <label>Password Confirmation</label>
+                        <label className='signUpLabel'>Password Confirmation</label>
                         <input
                             required
                             type='text'
