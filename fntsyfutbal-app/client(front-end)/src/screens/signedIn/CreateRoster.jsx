@@ -13,7 +13,26 @@ class CreateRoster extends Component {
         this.state = {
             roster: {
                 title: "",
-                // link: ""
+                player1: "",
+                imgUrl1: "",
+                player2: "",
+                imgUrl2: "",
+                player3: "",
+                imgUrl3: "",
+                player4: "",
+                imgUrl4: "",
+                player5: "",
+                imgUrl5: "",
+                player6: "",
+                imgUrl6: "",
+                player7: "",
+                imgUrl7: "",
+                player8: "",
+                imgUrl8: "",
+                player9: "",
+                imgUrl9: "",
+                player10: "",
+                imgUrl10: "",
             },
             createdRoster: null
         }
@@ -25,8 +44,8 @@ class CreateRoster extends Component {
         const name = target.name;
 
         this.setState(prevState => ({
-            roster: {...prevState.roster, [name]:value}
-        
+            roster: { ...prevState.roster, [name]: value }
+
         }))
     }
 
@@ -36,7 +55,7 @@ class CreateRoster extends Component {
         createRoster(this.state.roster)
             .then(res =>
                 res.status === 201
-                    ? this.setState({ createdRoster: res.data.roster})
+                    ? this.setState({ createdRoster: res.data.roster })
                     : null
             )
             .catch(console.error)
@@ -55,15 +74,15 @@ class CreateRoster extends Component {
 
         return (
             <Layout>
-              <RosterForm
-                roster={roster}
-                history={history}
-                handleChange={handleChange}
-                handleSubmit={handleSubmit}
-                cancelPath="/"
-              />
+                <RosterForm
+                    roster={roster}
+                    history={history}
+                    handleChange={handleChange}
+                    handleSubmit={handleSubmit}
+                    cancelPath="/"
+                />
             </Layout>
-          )
+        )
 
     }
 }

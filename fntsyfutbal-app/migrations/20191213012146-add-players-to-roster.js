@@ -4,7 +4,7 @@ module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.addColumn(
         'Rosters',
-        'player8',
+        'imgUrl7',
         Sequelize.STRING
       );
   },
