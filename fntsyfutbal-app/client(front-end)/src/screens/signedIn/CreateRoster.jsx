@@ -54,27 +54,6 @@ class CreateRoster extends Component {
             return <Redirect to={`/`} />
         }
 
-        // return (
-        //     <Layout>
-        //         <form name="Roster-Form">
-        //             <input
-        //                 type="text"
-        //                 name='inputTitle'
-        //                 title={this.title.state}
-        //                 history={history}
-        //                 placeholder='Roster Title'
-        //                 onChange={handleChange()}
-        //                 handleSubmit={handleSubmit}
-        //                 cancelPath='/'
-        //             />
-
-        //             <NavLink to='addPlayers'>
-        //                 <Button title='Add Players' className='submitCreateRoster' />
-        //             </NavLink>
-
-        //         </form>
-        //     </Layout>
-        // )
         return (
             <Layout>
               <RosterForm
