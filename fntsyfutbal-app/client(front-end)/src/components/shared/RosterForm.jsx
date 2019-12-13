@@ -26,9 +26,9 @@ const RosterForm = ({
 					onChange={handleChange}
 				/>
 				<input
-					placeholder='player name'
+					placeholder='Image Url'
 					value={roster.imgUlr1}
-					name='img1'
+					name='imgUrl1'
 					required
 					onChange={handleChange}
 				/>
@@ -37,15 +37,15 @@ const RosterForm = ({
 
 				<input
 					placeholder='player name'
-					value={roster.player1}
+					value={roster.player2}
 					name='player2'
 					required
 					onChange={handleChange}
 				/>
 				<input
-					placeholder='player name'
+					placeholder='Image Url'
 					value={roster.imgUlr1}
-					name='img2'
+					name='imgUrl2'
 					required
 					onChange={handleChange}
 				/>
@@ -54,15 +54,15 @@ const RosterForm = ({
 
 				<input
 					placeholder='player name'
-					value={roster.player1}
+					value={roster.player3}
 					name='player3'
 					required
 					onChange={handleChange}
 				/>
 				<input
-					placeholder='player name'
+					placeholder='Image Url'
 					value={roster.imgUlr1}
-					name='img3'
+					name='imgUrl3'
 					required
 					onChange={handleChange}
 				/>
@@ -70,15 +70,15 @@ const RosterForm = ({
 				<p>First Midfielder</p>
 				<input
 					placeholder='player name'
-					value={roster.player1}
+					value={roster.player4}
 					name='player4'
 					required
 					onChange={handleChange}
 				/>
 				<input
-					placeholder='player name'
+					placeholder='Image Url'
 					value={roster.imgUlr1}
-					name='img4'
+					name='imgUrl4'
 					required
 					onChange={handleChange}
 				/>
@@ -86,15 +86,15 @@ const RosterForm = ({
 				<p>Second Midfielder</p>
 				<input
 					placeholder='player name'
-					value={roster.player1}
+					value={roster.player5}
 					name='player5'
 					required
 					onChange={handleChange}
 				/>
 				<input
-					placeholder='player name'
+					placeholder='Image Url'
 					value={roster.imgUlr1}
-					name='img5'
+					name='imgUrl5'
 					required
 					onChange={handleChange}
 				/>
@@ -102,15 +102,15 @@ const RosterForm = ({
 				<p>Third Midfielder</p>
 				<input
 					placeholder='player name'
-					value={roster.player1}
+					value={roster.player6}
 					name='player6'
 					required
 					onChange={handleChange}
 				/>
 				<input
-					placeholder='player name'
+					placeholder='Image Url'
 					value={roster.imgUlr1}
-					name='img6'
+					name='imgUrl6'
 					required
 					onChange={handleChange}
 				/>
@@ -118,15 +118,15 @@ const RosterForm = ({
 				<p>First Defender</p>
 				<input
 					placeholder='player name'
-					value={roster.player1}
+					value={roster.player7}
 					name='player7'
 					required
 					onChange={handleChange}
 				/>
 				<input
-					placeholder='player name'
+					placeholder='Image Url'
 					value={roster.imgUlr1}
-					name='img7'
+					name='imgUrl7'
 					required
 					onChange={handleChange}
 				/>
@@ -134,15 +134,15 @@ const RosterForm = ({
 				<p>Second Defender</p>
 				<input
 					placeholder='player name'
-					value={roster.player1}
+					value={roster.player8}
 					name='player8'
 					required
 					onChange={handleChange}
 				/>
 				<input
-					placeholder='player name'
+					placeholder='Image Url'
 					value={roster.imgUlr1}
-					name='img8'
+					name='imgUrl8'
 					required
 					onChange={handleChange}
 				/>
@@ -150,15 +150,15 @@ const RosterForm = ({
 				<p>Third Defender</p>
 				<input
 					placeholder='player name'
-					value={roster.player1}
+					value={roster.player9}
 					name='player9'
 					required
 					onChange={handleChange}
 				/>
 				<input
-					placeholder='player name'
+					placeholder='Image Url'
 					value={roster.imgUlr1}
-					name='img9'
+					name='imgUrl9'
 					required
 					onChange={handleChange}
 				/>
@@ -166,31 +166,15 @@ const RosterForm = ({
 				<p>Goalie</p>
 				<input
 					placeholder='player name'
-					value={roster.player1}
+					value={roster.player10}
 					name='player10'
 					required
 					onChange={handleChange}
 				/>
 				<input
-					placeholder='player name'
+					placeholder='Image Url'
 					value={roster.imgUlr1}
-					name='img10'
-					required
-					onChange={handleChange}
-				/>
-
-
-				<input
-					placeholder='player name'
-					value={roster.player1}
-					name='player11'
-					required
-					onChange={handleChange}
-				/>
-				<input
-					placeholder='player name'
-					value={roster.imgUlr1}
-					name='img11'
+					name='imgUrl10'
 					required
 					onChange={handleChange}
 				/>

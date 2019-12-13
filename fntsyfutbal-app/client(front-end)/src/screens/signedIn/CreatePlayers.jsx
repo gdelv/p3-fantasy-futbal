@@ -45,7 +45,7 @@ class CreatePlayers extends Component {
     render() {
         const { handleChange, handleSubmit } = this
         const { createdPlayer, title } = this.state
-        console.log(this.state)
+        // console.log(this.state)
         const { history } = this.props
 
         if (createdPlayer) {

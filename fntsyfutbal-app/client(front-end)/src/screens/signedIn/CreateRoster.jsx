@@ -5,7 +5,6 @@ import Layout from '../../components/shared/Layout'
 // import { Button } from '../../components/shared/Button'
 // import { NavLink } from 'react-router-dom'
 import { createRoster } from '../../services/rosters'
-import CreatePlayers from './CreatePlayers'
 
 class CreateRoster extends Component {
     constructor(props) {
@@ -25,11 +24,10 @@ class CreateRoster extends Component {
         const value = target.value;
         const name = target.name;
 
-        this.setState({
-            roster: {
-                [name]: value
-            }
-        })
+        this.setState(prevState => ({
+            roster: {...prevState.roster, [name]:value}
+        
+        }))
     }
 
     handleSubmit = event => {
@@ -45,6 +43,7 @@ class CreateRoster extends Component {
     }
 
     render() {
+        console.log(this.state)
         const { handleChange, handleSubmit } = this
         const { createdRoster, roster } = this.state
         // console.log(this.state)
@@ -63,7 +62,6 @@ class CreateRoster extends Component {
                 handleSubmit={handleSubmit}
                 cancelPath="/"
               />
-              <CreatePlayers/>
             </Layout>
           )
 

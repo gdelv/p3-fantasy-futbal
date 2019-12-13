@@ -136,7 +136,10 @@ const getAllRosters = async (req, res) => {
 const createRoster = async (req, res) => {
     try {
         console.log('req.body:', req.body)
-        const createdRoster = await Roster.create(req.body)
+        const {title }= req.body
+        const createdRoster = await Roster.create({
+            title:title
+        })
 
         return res.status(201).json({
             user: {
