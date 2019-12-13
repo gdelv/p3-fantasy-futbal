@@ -4,7 +4,7 @@ module.exports = {
   up: (queryInterface, Sequelize) => {
       return queryInterface.addColumn(
           'Rosters',
-          'imgUrl10',
+          'player10',
           Sequelize.STRING
         );
     },
@@ -12,7 +12,7 @@ module.exports = {
     down: (queryInterface, Sequelize) => {
       return queryInterface.removeColumn(
         'Rosters',
-        'imgUrl10',
+        'player10',
       )
     }
   };
