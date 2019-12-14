@@ -13,18 +13,18 @@ router.post('/sign-up', controllers.join) // (works good)
 router.post('/sign-in', controllers.logIn)  // (works good)
 
 //get all users/rosters/players
-router.get('/users', controllers.getAllUsers)
+router.get('/users', controllers.getAllUsers) // (works good)
 
-router.get('/rosters', controllers.getAllRosters)
+router.get('/rosters', controllers.getAllRosters)  // (works good)
 
-router.get('/players', controllers.getAllPlayers)
+// router.get('/players', controllers.getAllPlayers)
 
 //get roster/player by ID
-router.get('/rosters/:id', controllers.getRosterById)
-router.get('/players/:id', controllers.getPlayerById)
+router.get('/rosters/:id', controllers.getRosterById) // (works good)
+// router.get('/players/:id', controllers.getPlayerById)
 
 //create roster/player
-router.post('/rosters', restrict, controllers.createRoster)
+router.post('/rosters', restrict, controllers.createRoster)  
 // router.post('/players', restrict, controllers.createPlayer)
 
 //edit roster/player

@@ -6,7 +6,7 @@ const SALT_ROUNDS = 11
 const TOKEN_KEY = 'fantasykey'
 
 
-//Join Controller (Sign Up)
+//Join Controller (Sign Up)  (works good)
 
 const join = async (req, res) => {
     try {
@@ -19,7 +19,6 @@ const join = async (req, res) => {
             firstName,
             lastName,
             imgUrl,
-            // password
             password_digest
         })
         console.log(user)
@@ -40,10 +39,8 @@ const join = async (req, res) => {
     }
 }
 
-//Login Controller (Sign In)
+//Login Controller (Sign In)  (works good)
 const logIn = async (req,res) => {
-
-
     try {
             console.log(req.body)
             const { username, password } = req.body
@@ -67,13 +64,12 @@ const logIn = async (req,res) => {
             }
 
     } catch(error) {
-        // return res.status(500).json({ error:error.message })
-        throw error
+        return res.status(500).json({ error:error.message })
     }
 }
 
 
-const getAllUsers = async (req,res) => {
+const getAllUsers = async (req,res) => {  //(works good)
     try {
         const users = await User.findAll();
         return res.status(200).json({ users })
@@ -82,38 +78,48 @@ const getAllUsers = async (req,res) => {
     }
 }
 
-
-const getAllPlayers = async (req,res) => {
+const getAllRosters = async (req, res) => {  //(works good)
+    console.log('here')
     try {
-        const players = await Player.findAll();
-        return res.status(200).json({ players })
+        const rosters = await Roster.findAll();
+        return res.status(200).json({ rosters })
     } catch (error) {
         return res.status(500).send(error.message)
     }
 }
+// const getAllPlayers = async (req,res) => {
+//     console.log('here')
+
+//     try {
+//         const players = await Player.findAll();
+//         return res.status(200).json({ players })
+//     } catch (error) {
+//         return res.status(500).send(error.message)
+//     }
+// }
 
 // const getAllPlayers = async(req,res)=>{
 //     const players = await Player.findAll()
 //     res.send(players)
 // }
 
-const getPlayersRosters = async (req, res) => {
-    console.log('inside contoller')
-    try {
-        const player = await players.findAll( {
-            where: {
-                id: req.params.id
-            },
-            include: [{
-                model: Roster,
-            }]
-        });
-        return res.status(200).json({ player })
-    }
-    catch (error) {
-        return res.status(500).send(error.message)
-    }
-}
+// const getPlayersRosters = async (req, res) => {  //(works good)
+//     console.log('inside contoller')
+//     try {
+//         const player = await players.findAll( {
+//             where: {
+//                 id: req.params.id
+//             },
+//             include: [{
+//                 model: Roster,
+//             }]
+//         });
+//         return res.status(200).json({ player })
+//     }
+//     catch (error) {
+//         return res.status(500).send(error.message)
+//     }
+// }
 
 const getRosterById = async (req, res) => {
     try {
@@ -146,15 +152,7 @@ const getPlayerById = async (req, res) => {
 }
 
 
-const getAllRosters = async (req, res) => {
-    console.log('here')
-    try {
-        const rosters = await Roster.findAll();
-        return res.status(200).json({ rosters })
-    } catch (error) {
-        return res.status(500).send(error.message)
-    }
-}
+
 
 const createRoster = async (req, res) => {
     try {
@@ -280,14 +278,16 @@ module.exports = {
     logIn,
     getAllUsers,
     getAllRosters,
+    
+    
+    // getAllPlayers,
     createRoster,
     getPlayerById,
     getRosterById,
     updateRoster,
     deleteRoster,
-    getPlayersRosters,
+    // getPlayersRosters,
     createPlayer,
     updatePlayer,
-    deletePlayer,
-    getAllPlayers
+    deletePlayer
 }
