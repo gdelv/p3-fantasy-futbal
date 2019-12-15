@@ -24,15 +24,15 @@ router.get('/rosters/:id', controllers.getRosterById) // (works good)
 // router.get('/players/:id', controllers.getPlayerById)
 
 //create roster/player
-router.post('/rosters', controllers.createRoster)  
+router.post('/rosters', controllers.createRoster)  // (works good) (works without restrict only)
 // router.post('/players', restrict, controllers.createPlayer)
 
 //edit roster/player
-router.put('/rosters/:id', restrict, controllers.updateRoster)
+router.put('/rosters/:id', controllers.updateRoster)
 // router.put('/players/:id', restrict, controllers.updatePlayer)
 
 //delete roster/player
-router.delete('/rosters/:id', restrict, controllers.deleteRoster)
+router.delete('/rosters/:id', controllers.deleteRoster)
 // router.delete('/players/:id', restrict, controllers.deletePlayer)
 
 module.exports = router
