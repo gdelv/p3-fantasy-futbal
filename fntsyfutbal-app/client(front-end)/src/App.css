@@ -63,12 +63,13 @@ h1, h2, h3 {
     text-align: center;
 }
 
-.landing .giphy img{
-width: 60%;
-display: flex;
-justify-content: center;
-margin: 0 auto; 
-box-shadow: 5px 5px 5px rgba(68,68,68,0.6)
+.giphy img{
+    display: flex;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto; 
+    box-shadow: 5px 5px 5px rgba(68,68,68,0.6)
 }
 
 .giphy h4{
