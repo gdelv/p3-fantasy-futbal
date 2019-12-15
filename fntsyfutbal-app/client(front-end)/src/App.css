@@ -238,6 +238,12 @@ label.signUpLabel {
 
 div .form-container {
     position: absolute;
-    top: -5em;
-    left: 30%;
+    top: 10em;
+    left: 40%;
+}
+
+
+#login {
+    top:-14em;
+    left:40%
 }

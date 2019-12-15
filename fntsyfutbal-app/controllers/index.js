@@ -6,7 +6,7 @@ const SALT_ROUNDS = 11
 const TOKEN_KEY = 'fantasykey'
 
 
-//Join Controller (Sign Up)
+//Join Controller (Sign Up)  (works good)
 
 const join = async (req, res) => {
     try {
@@ -19,7 +19,6 @@ const join = async (req, res) => {
             firstName,
             lastName,
             imgUrl,
-            // password
             password_digest
         })
         console.log(user)
@@ -40,10 +39,8 @@ const join = async (req, res) => {
     }
 }
 
-//Login Controller (Sign In)
+//Login Controller (Sign In)  (works good)
 const logIn = async (req,res) => {
-
-
     try {
             console.log(req.body)
             const { username, password } = req.body
@@ -67,13 +64,28 @@ const logIn = async (req,res) => {
             }
 
     } catch(error) {
-        // return res.status(500).json({ error:error.message })
-        throw error
+        return res.status(500).json({ error:error.message })
+    }
+}
+
+const createRoster = async (req, res) => {   //(works good)
+    try {
+        console.log('this is req.body', req.body)
+        const createdRoster = await Roster.create(req.body)
+
+        return res.status(201).json({
+            roster: {
+                createdRoster
+            }
+        })
+    } catch (error) {
+        console.log(error)
+        return res.status(500).json({ error: error.message })
     }
 }
 
 
-const getAllUsers = async (req,res) => {
+const getAllUsers = async (req,res) => {  //(works good)
     try {
         const users = await User.findAll();
         return res.status(200).json({ users })
@@ -82,40 +94,50 @@ const getAllUsers = async (req,res) => {
     }
 }
 
-
-const getAllPlayers = async (req,res) => {
+const getAllRosters = async (req, res) => {  //(works good)
+    console.log('here')
     try {
-        const players = await Player.findAll();
-        return res.status(200).json({ players })
+        const rosters = await Roster.findAll();
+        return res.status(200).json({ rosters })
     } catch (error) {
         return res.status(500).send(error.message)
     }
 }
+// const getAllPlayers = async (req,res) => {
+//     console.log('here')
+
+//     try {
+//         const players = await Player.findAll();
+//         return res.status(200).json({ players })
+//     } catch (error) {
+//         return res.status(500).send(error.message)
+//     }
+// }
 
 // const getAllPlayers = async(req,res)=>{
 //     const players = await Player.findAll()
 //     res.send(players)
 // }
 
-const getPlayersRosters = async (req, res) => {
-    console.log('inside contoller')
-    try {
-        const player = await players.findAll( {
-            where: {
-                id: req.params.id
-            },
-            include: [{
-                model: Roster,
-            }]
-        });
-        return res.status(200).json({ player })
-    }
-    catch (error) {
-        return res.status(500).send(error.message)
-    }
-}
+// const getPlayersRosters = async (req, res) => {  //(works good)
+//     console.log('inside contoller')
+//     try {
+//         const player = await players.findAll( {
+//             where: {
+//                 id: req.params.id
+//             },
+//             include: [{
+//                 model: Roster,
+//             }]
+//         });
+//         return res.status(200).json({ player })
+//     }
+//     catch (error) {
+//         return res.status(500).send(error.message)
+//     }
+// }
 
-const getRosterById = async (req, res) => {
+const getRosterById = async (req, res) => {  //// works good
     try {
         const { id } = req.params
         const roster = await Roster.findOne({
@@ -130,72 +152,25 @@ const getRosterById = async (req, res) => {
     }
 }
 
-const getPlayerById = async (req, res) => {
-    try {
-        const { id } = req.params
-        const player = await Player.findOne({
-            where: { id: id }
-        })
-        if (player) {
-            return res.status(200).json({ player })
-        }
-        return res.status(404).send('Player with the specified ID does not exist')
-    } catch (error) {
-        return res.status(500).send(error.message)
-    }
-}
+// const getPlayerById = async (req, res) => {
+//     try {
+//         const { id } = req.params
+//         const player = await Player.findOne({
+//             where: { id: id }
+//         })
+//         if (player) {
+//             return res.status(200).json({ player })
+//         }
+//         return res.status(404).send('Player with the specified ID does not exist')
+//     } catch (error) {
+//         return res.status(500).send(error.message)
+//     }
+// }
 
 
-const getAllRosters = async (req, res) => {
-    console.log('here')
-    try {
-        const rosters = await Roster.findAll();
-        return res.status(200).json({ rosters })
-    } catch (error) {
-        return res.status(500).send(error.message)
-    }
-}
 
-const createRoster = async (req, res) => {
-    try {
-        const {title, player1, player2,player3,player4,player5,player6,player7,player8,player9,player10,player11,imgUrl1,imgUrl2,imgUrl3,imgUrl4,imgUrl5,imgUrl6,imgUrl7,imgUrl8,imgUrl9,imgUrl10} = req.body
-        console.log('this is req.body', req.body)
-        console.log(imgUrl1)
-        const createdRoster = await Roster.create({
-            title,
-            player1,
-            player2, 
-            player3, 
-            player4, 
-            player5, 
-            player6, 
-            player7, 
-            player8,
-            player9, 
-            player10, 
-            player11,
-            imgUrl1,
-            imgUrl2,
-            imgUrl3,
-            imgUrl4,
-            imgUrl5,
-            imgUrl6,
-            imgUrl7,
-            imgUrl8,
-            imgUrl9,
-            imgUrl10
-        })
 
-        return res.status(201).json({
-            roster: {
-                createdRoster
-            }
-        })
-    } catch (error) {
-        console.log(error)
-        return res.status(500).json({ error: error.message })
-    }
-}
+
 
 const updateRoster = async (req, res) => {
     try {
@@ -233,61 +208,63 @@ const deleteRoster = async (req, res) => {
     }
 }
 
-const createPlayer = async (req, res) => {
-    try {
-        const player = await Player.create(req.body)
-        return res.status(201).json({
-            player
-        })
-    } catch (error) {
-    return res.status(500).json({error: error.message})
-    }
-}
+// const createPlayer = async (req, res) => {
+//     try {
+//         const player = await Player.create(req.body)
+//         return res.status(201).json({
+//             player
+//         })
+//     } catch (error) {
+//     return res.status(500).json({error: error.message})
+//     }
+// }
 
-const updatePlayer = async (req, res) => {
-    try {
-        const {id} = req.params
-        const [updated] = await Player.Update(req.body, {
-            Where: { id: id }
-        })
-       if (update) {
-           const updatePlayer = await Player.findAll({where: {id:id}})
-           return res.status(200).json({player: updatePlayer})
-       }
-    } catch (error) {
-       return res.status(500).send(error.message)
-        }
-    }
+// const updatePlayer = async (req, res) => {
+//     try {
+//         const {id} = req.params
+//         const [updated] = await Player.Update(req.body, {
+//             Where: { id: id }
+//         })
+//        if (update) {
+//            const updatePlayer = await Player.findAll({where: {id:id}})
+//            return res.status(200).json({player: updatePlayer})
+//        }
+//     } catch (error) {
+//        return res.status(500).send(error.message)
+//         }
+//     }
 
-    const deletePlayer = async (req, res) => {
-     try {
-         const {id} = req.params
-         const deleted = await Player.destroy({
-             where: {id: id}
-         })
-         if (deleted) {
-            return res.status(200).send('Player deleted')
-         }
-     } catch (error) {
-         return res.status(500).send(error.message)
-     }
-    }
+    // const deletePlayer = async (req, res) => {
+    //  try {
+    //      const {id} = req.params
+    //      const deleted = await Player.destroy({
+    //          where: {id: id}
+    //      })
+    //      if (deleted) {
+    //         return res.status(200).send('Player deleted')
+    //      }
+    //  } catch (error) {
+    //      return res.status(500).send(error.message)
+    //  }
+    // }
 
 
 
 module.exports = {
-    join,
-    logIn,
-    getAllUsers,
-    getAllRosters,
-    createRoster,
-    getPlayerById,
-    getRosterById,
-    updateRoster,
-    deleteRoster,
-    getPlayersRosters,
-    createPlayer,
-    updatePlayer,
-    deletePlayer,
-    getAllPlayers
+    join, //works
+    logIn, //works
+    getAllUsers, //works
+    getAllRosters, //works
+    getRosterById, //works
+    createRoster,//works 
+    deleteRoster,//works
+    
+    updateRoster //does not work
+    
+    // getAllPlayers, //does not work
+    // getPlayerById //does not work
+    // getPlayersRosters, //does not work
+    // createPlayer, //does not work
+    // updatePlayer, //does not work
+    // deletePlayer //does not work
 }

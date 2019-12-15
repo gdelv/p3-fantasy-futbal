@@ -9,15 +9,15 @@ import Roster from '../screens/signedIn/Roster'
 import Rosters from '../screens/signedIn/Rosters'
 import RosterCreate from '../screens/signedIn/CreateRoster'
 import RosterEdit from '../screens/signedIn/RosterEdit' 
-import CreatePlayer from '../screens/signedIn/CreatePlayers'
+// import CreatePlayer from '../screens/signedIn/CreatePlayers'
 
-import Player from '../screens/signedIn/Player'
-import Players from '../screens/signedIn/Players'
+// import Player from '../screens/signedIn/Player'
+// import Players from '../screens/signedIn/Players'
 
 import AuthenticatedRoute from './AuthenticatedRoute'
 
 
-const Routes = ({ user, rosters, players, setUser, clearUser, addRoster, addPlayer }) => (
+const Routes = ({ user, rosters, players, setUser, clearUser, addRoster }) => (
     <Switch>
         <Route
             exact
@@ -64,7 +64,7 @@ const Routes = ({ user, rosters, players, setUser, clearUser, addRoster, addPlay
             path="/create"
             render={props => <RosterCreate {...props} addRoster={addRoster} />}
         />
-        <AuthenticatedRoute
+        {/* <AuthenticatedRoute
             exact
             path='/players'
             user={user}
@@ -83,7 +83,7 @@ const Routes = ({ user, rosters, players, setUser, clearUser, addRoster, addPlay
             path='/createplayer'
             user={user}
             render={props => <CreatePlayer {...props} addPlayer={addPlayer} />}
-        />
+        /> */}
 
     </Switch>
 
