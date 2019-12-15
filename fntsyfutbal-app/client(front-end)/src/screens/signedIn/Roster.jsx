@@ -61,6 +61,16 @@ class Roster extends Component {
                     }}>
                         Delete Roster
                     </button>
+                    <button
+                        className="edit"
+                        onClick={() =>
+                            this.props.history.push(
+                                `/rosters/${this.props.match.params.id}/edit`
+                            )
+                        }
+                    >
+                        Edit
+                    </button>
                 </div>
             </Layout>
         )

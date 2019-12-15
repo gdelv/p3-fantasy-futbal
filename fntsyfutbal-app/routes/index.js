@@ -32,7 +32,7 @@ router.put('/rosters/:id', controllers.updateRoster)
 // router.put('/players/:id', restrict, controllers.updatePlayer)
 
 //delete roster/player
-router.delete('/rosters/:id', controllers.deleteRoster)
+router.delete('/rosters/:id', controllers.deleteRoster) // (works good) (works without restrict only)
 // router.delete('/players/:id', restrict, controllers.deletePlayer)
 
 module.exports = router

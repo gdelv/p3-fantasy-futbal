@@ -68,7 +68,7 @@ const logIn = async (req,res) => {
     }
 }
 
-const createRoster = async (req, res) => {
+const createRoster = async (req, res) => {   //(works good)
     try {
         console.log('this is req.body', req.body)
         const createdRoster = await Roster.create(req.body)
@@ -256,13 +256,10 @@ module.exports = {
     getAllUsers, //works
     getAllRosters, //works
     getRosterById, //works
-
-
-    //currently working on
-    createRoster,
+    createRoster,//works 
+    deleteRoster,//works
     
-    updateRoster,
-    deleteRoster
+    updateRoster //does not work
     
     // getAllPlayers, //does not work
     // getPlayerById //does not work
