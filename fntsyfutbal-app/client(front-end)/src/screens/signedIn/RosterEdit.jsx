@@ -10,7 +10,27 @@ class RosterEdit extends Component {
 
         this.state = {
             roster: {
-                title: ''
+                title: "",
+                player1: "",
+                imgUrl1: "",
+                player2: "",
+                imgUrl2: "",
+                player3: "",
+                imgUrl3: "",
+                player4: "",
+                imgUrl4: "",
+                player5: "",
+                imgUrl5: "",
+                player6: "",
+                imgUrl6: "",
+                player7: "",
+                imgUrl7: "",
+                player8: "",
+                imgUrl8: "",
+                player9: "",
+                imgUrl9: "",
+                player10: "",
+                imgUrl10: ""
             },
             updated: false
         }
