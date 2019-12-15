@@ -26,7 +26,6 @@ h1, h2, h3 {
 .nav {
     height: 20%;
     background-color: #215F96;
-    border: 1px solid white;
     display: flex;
     justify-content: space-between;
     color: white;
@@ -35,7 +34,6 @@ h1, h2, h3 {
 }
 
 .nav a {
-
     position: relative;
     top: 35%;
     padding: 5px;
@@ -102,6 +100,10 @@ input {
 
 /* Sign in form*/
 
+.row {
+    margin-top: -15em
+}
+
 .row .form-container {
     border: 1px grey;
     text-align: center;
@@ -128,25 +130,29 @@ input {
     margin-right: auto
 }
 
+
 .create-button {
     height: 60px;
-    width: 80%
+    width: 80%;
+}
+
+a {
+    text-decoration: none;
 }
 
 .sign-in{
     margin-top: 0;
 }
 
-a.sign-in:hover {
+/* a.sign-in:hover {
     color: red
-}
+} */
 
 label.signUpLabel {
     text-align: center;
 }
 
 .row .form-container {
-    /* border: 1px solid purple; */
     display: flex;
     flex-direction: column;   
 }
@@ -161,7 +167,7 @@ label.signUpLabel {
 }
 
 .signInTitle {
-    margin: 0 auto;
+    text-align: center;
     margin-bottom: 15px;
 }
 
@@ -238,12 +244,56 @@ label.signUpLabel {
 
 div .form-container {
     position: absolute;
-    top: 10em;
-    left: 40%;
+    top: 2em;
+    left: 30%;
 }
 
+.roster-form {
+    margin: 0 auto;
+    color: #93BEFD;
+}
 
-#login {
-    top:-14em;
-    left:40%
+.roster-form input {
+    padding: 4% 20%;
+    border: 1px solid grey;
+    background-color: #E8F0FE ;
+    border-radius: 4px;
+    margin: 3% 20%;   
+    
+}
+
+.rosterTitle {
+    color: black
+}
+
+.roster-form p {
+    text-align: center;
+    font-weight: 700;
+}
+
+.button-div {
+    display: flex;
+    justify-content: space-around;
+}
+
+.roster-form button {
+    margin: 0 auto;
+    left: 20px;
+    font-weight: 800; 
+    text-decoration: none;
+    background: #829155;
+    color: white;
+    font-size: 1rem;
+    padding: 15px;
+    border-radius: 10px;
+    height: 45%;
+    width: 40%;
+}
+
+footer {
+    text-align: center;
+}
+
+footer p {
+    opacity: 30%;
 }

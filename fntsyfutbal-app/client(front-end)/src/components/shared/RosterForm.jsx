@@ -7,9 +7,9 @@ const RosterForm = ({
 	cancelPath,
 	history
 }) => (
-		<div className='form-container'>
+		<div className='roster-form'>
 			<form onSubmit={handleSubmit}>
-				<label>Roster Title</label>
+				<h3 className='rosterTitle'>Roster Title</h3>
 				<input
 					placeholder='Roster Title.'
 					value={roster.title}
@@ -178,11 +178,12 @@ const RosterForm = ({
 					required
 					onChange={handleChange}
 				/>
-
-				<button type='submit'>Submit</button>
-				<button className='danger' onClick={() => history.push(cancelPath)}>
-					Cancel
-			</button>
+				<div className="button-div">
+					<button type='rosterSubmit'>Submit</button>
+					<button className='danger' onClick={() => history.push(cancelPath)}>
+						Cancel
+					</button>
+				</div>
 			</form>
 		</div>
 	)
