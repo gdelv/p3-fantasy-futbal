@@ -56,7 +56,6 @@ export default function Rosters(props) {
                         <p>{roster.player10}</p>
                         <img src={roster.imgUrl10} key={roster.id} />
 
-
                         {renderButton(roster.id)}
                     </div>
                 )

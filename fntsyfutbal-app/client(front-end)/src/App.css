@@ -10,6 +10,10 @@ h3 {
    text-align: center;
 }
 
+h4 {
+    text-align: center;
+}
+
 h1, h2, h3 {
     font-family: 'Viga', sans-serif;
 }
@@ -188,7 +192,6 @@ label.signUpLabel {
 
 .layout .content{
     position: relative;
-    border: 1px solid blue;
     margin-top: 0 ; 
     
 }
