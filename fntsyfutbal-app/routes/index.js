@@ -24,7 +24,7 @@ router.get('/rosters/:id', controllers.getRosterById) // (works good)
 // router.get('/players/:id', controllers.getPlayerById)
 
 //create roster/player
-router.post('/rosters', restrict, controllers.createRoster)  
+router.post('/rosters', controllers.createRoster)  
 // router.post('/players', restrict, controllers.createPlayer)
 
 //edit roster/player
