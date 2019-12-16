@@ -175,8 +175,13 @@ const getRosterById = async (req, res) => {  //// works good
 const updateRoster = async (req, res) => {
     try {
         const { id } = req.params
-        const { roster } = req.body
-        const [updated] = await Roster.update(roster, {
+        console.log(req)
+
+        console.log(req.body)
+        console.log('here')
+
+        // const { roster } = req.body
+        const [updated] = await Roster.update(req.body, {
             where: { id: id }
         })
         if (updated) {
